@@ -1,0 +1,47 @@
+$bgcolor: #fff;
+$margtop: 1.2rem;
+$bg-widt: 20rem;
+$redcolor: rgb(249, 201, 201);
+$hoverbg: rgb(192, 197, 192);
+
+@function rem($sizes) {
+  @return calc($sizes/16) + rem;
+}
+$ibrahim-debug-color: red;
+
+
+/* NAVBAR variables */
+$bgcolor-dark: #27262c;
+$sublang-text-color: #280d5f;
+$sublang-text-color-alt: #fff;
+$sublang-text-hover: rgb(90, 45, 133);
+$sublang-text-hover-alt: rgba(255, 255, 255, 0.6);
+$world-img-alt:#b8add2;
+$world-img: #7a6eaa;
+$select-net-bg-color: rgba(244, 247, 248, 1);
+$select-net-bg-color-alt: #27262c96;
+$select-net-txt-color: rgba(40, 13, 95, 1);
+$select-net-txt-color-hover: rgba(40, 13, 95, 0.5);
+$select-net-txt-color-alt: #f4eeff; 
+$select-net-txt-color-hover-alt: #f4eeffab; 
+$net-selection-bg-color: #fff;
+$net-selection-bg-color-alt: #27262c;
+$nav-item-hover: #EFF4F5;
+$nav-item-hover-alt: #353547;
+
+/* end of NAVBAR variables*/
+
+/* INFOS variables */
+$infos-1-bg-color: #FAF9FA;
+$up-down-color: #7a6eaa;
+$up-down-hover-color: #aaa9ac;
+$infos-1-button-bg-color: #ebf0f5;
+$data-box-h3-color: #7645d9;
+$data-box-p-color: #7a6eaa;
+$infos-2-bg-color: rgba(255, 255, 255, 0.7);
+$price-box-bg-color: #1fc7d4;
+$price-box-shadow: #15858e;
+$price-font-size: 2.3rem;
+$infos-2-button-font-size: 1rem;
+$infos-2-win: #7645d9;
+/* end of INFOS variables */

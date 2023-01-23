@@ -1,0 +1,172 @@
+#sign-up {
+    position: relative;
+    height: 428px;
+    background-color: purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: linear-gradient(rgb(118, 69, 217) 0%, rgb(81, 33, 177) 100%);
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        gap: 1rem;
+
+        h2 {
+            flex: 0.15;
+            color: white;
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        p {
+            flex: 0.2;
+            font-size: 15px;
+            font-weight: lighter;
+            color: white;
+            line-height: 1.7;
+            span {
+                font-weight: bold;
+                font-size: 15px;
+                display: block;
+                text-align: center;
+            }
+
+        }
+
+        a {
+            color: #1fc7d4;
+
+            &:hover {
+                text-decoration: underline;
+
+            }
+            flex: 0.1;
+        }
+
+        button {
+            appearance: none;
+            border: none;
+
+            width: 170px;
+            height: 50px;
+
+            border-radius: 20px;
+            background-color: #1fc7d4;
+
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: .5px;
+
+            &:hover {
+                opacity: 0.6;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #signup-pancakes-1 {
+        position: absolute;
+        //border: 1px solid aqua;
+        width: 256px;
+        height: 256px;
+        top: 0;
+        left: 100px;
+      
+        .signup-pancake {
+            position: absolute;
+            top: 0px;
+            width: 256px;
+        }
+
+        img:last-child {
+            animation: 3s ease-in-out 1s infinite normal none running signup-pancake-3;
+        }
+
+        img:nth-child(2) {
+            animation: 2s ease-in-out 2s infinite normal none running signup-pancake-2;
+        }
+    }
+
+    #signup-pancakes-2 {
+        position: absolute;
+        width: 256px;
+        height: 256px;
+        //border: 1px solid aqua;
+        bottom: 15px;
+        right: 100px;
+        
+        .signup-pancake {
+            position: absolute;
+            top: 0px;
+            width: 256px;
+        }
+
+        img:nth-child(2) {
+            z-index: 1;
+            animation: 3s ease-in-out 2s infinite normal none running signup-pancake-3;
+        }
+        
+        img:last-child {
+            position: relative;
+            right: 10px;
+            bottom: 10px;
+            width: 215px;
+            bottom: 5px;
+            animation: 3s ease-in-out 3s infinite normal none running signup-pancake-2;
+        }
+
+        img:first-child {
+            z-index: 1;
+        }
+    }
+}
+
+#signup-pancakes-1, #signup-pancakes-2 {
+    img:first-child {
+        animation: 3s ease-in-out 2s infinite normal none running signup-pancake-1;
+    }
+}
+
+
+@keyframes signup-pancake-1 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(3px, 13px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes signup-pancake-2 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(5px, 10px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes signup-pancake-3 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(5px, 3px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+    
+}

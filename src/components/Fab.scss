@@ -1,0 +1,33 @@
+.fab-visible {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#fab {
+    display: block;
+    position: fixed;
+    right: 5%;
+    bottom: 17%;
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #1fc7d4;
+    appearance: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: rgba(14, 14, 44, 0.6) 0px -1px inset;
+
+    img {
+        margin-bottom: 0;
+        background-color: #1fc7d4;
+    }
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.6;
+        transition: 0.2s;
+    }
+}

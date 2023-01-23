@@ -1,0 +1,81 @@
+.hide-warning {
+    top: -100px;
+}
+
+.show-warning {
+    top: 0;
+}
+
+
+
+#phishing-warning {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    width: 100vw;
+    background-image: linear-gradient(#7B4CCE, #4E268D);
+    height: 70px;
+    transition: ease-in 0.2s;
+    
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background-image: linear-gradient(#573C8B, #402869);
+        height: 80%;
+        width: 60%;
+        flex-wrap: wrap;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        color: #A09EB1;
+        
+        span {
+            font-weight: bolder;
+            color: #FFB237;
+            margin-left: 10px;
+            margin-right: 5px;
+            font-size: 0.8rem;
+        }
+
+        #url {
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            position: relative;
+            right: 5px;
+        }
+    }
+    
+    #phishing-bunny {
+        width: 92px;
+        height: 121px;
+    }
+
+    button {
+        background-color: transparent;
+        appearance: none;
+        border: none;
+        position: absolute;
+        right: 0px;
+        width: 45px;
+        height: 48px;
+        margin-right: 15px;
+        margin-top: 3px;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

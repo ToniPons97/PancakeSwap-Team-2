@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
+import Fab from './components/Fab';
+import Footer from './components/Footer';
+import Homepage from './components/Homepage';
+import { useFabScroll } from './components/Hooks/useFabScroll';
+import Navbar from './components/Navbar';
+import PhishingWarning from './components/PhishingWarning';
+
+
 function App() {
+  // Phishing Warning state.
+  const [showWarning, setShowWarning] = useState(true);
+
+  // Custom hook to render Fab component conditionally.
+  const {fabVisible, handleFabScrollEvent} = useFabScroll();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      <div onScroll={handleFabScrollEvent}>
+        <PhishingWarning phishingWarningState={{showWarning, setShowWarning}}/>
+        <Navbar isWarningVisible={showWarning}/>
+        <Routes>
+          <Route path='home' element={<Homepage />} />
+        </Routes>
+        <Footer />
+        <Fab isFabVisible={fabVisible}/>
+      </div>
+    );
+  }
 
 export default App;
