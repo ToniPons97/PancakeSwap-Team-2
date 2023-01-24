@@ -1,0 +1,45 @@
+#theme-checkbox {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    width: 56px;
+    height: 32px;
+    background-color: #555;
+    position: relative;
+    border-radius: 25px;
+    position: relative;
+    grid-column: span 1;
+
+    img {
+        flex: 0;
+        width: 20px;
+        height: 32px;
+    }
+
+    label {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        transition: left .2s ease;
+        cursor: pointer;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        background: #27262c;
+
+        &:hover {
+            border: 2px solid #9A6AFF;
+        }
+    }
+
+    #theme-selection:checked+label {
+        left: 27px;
+    }
+}
