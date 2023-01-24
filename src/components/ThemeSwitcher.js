@@ -10,7 +10,7 @@ const ThemeSwitcher = () => {
     const [activeImg, setActiveImg] = useState(sunBtn);
 
     const handleCheckbox = (event) => 
-        event.target.checked ? setActiveImg(moonBtn) : setActiveImg(sunBtn);
+        setActiveImg(event.target.checked ? moonBtn : sunBtn);
 
     return (
         <div id="theme-checkbox">
