@@ -7,11 +7,9 @@ import instagram from '../assets/icons/instagram.svg';
 import github from '../assets/icons/github.svg';
 import discord from '../assets/icons/discord.svg';
 import medium from '../assets/icons/medium.svg';
-import sunBg from '../assets/icons/footer-btn-sun-bg.svg';
-import moonBg from '../assets/icons/footer-btn-moon-bg.svg';
-import sunBtn from '../assets/icons/theme-btn-sun.svg';
 import logoRound512 from '../Full Logo/icon-round-512.png';
 import footerBtnRightArrow from '../assets/icons/header-btn-right-arrow.svg';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const Footer = () => {
     return (
@@ -196,14 +194,7 @@ const Footer = () => {
             </section>
             <section id="footer-bottom">
             <div id="checkbox-container">
-                <div id="theme-checkbox">
-                <img src={sunBg} alt="" />
-                <img src={moonBg} alt="" />
-                <input type="checkbox" name="theme" value="1" id="theme-selection" />
-                <label htmlFor="theme-selection">
-                    <img id="f-theme-icon" src={sunBtn} alt="" />
-                </label>  
-                </div>
+                <ThemeSwitcher />
                 <div id="footer-lang">
 
                 <div id="lang-icons-wrapper">
