@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Homepage from './components/Homepage';
 import { useFabScroll } from './components/Hooks/useFabScroll';
 import Navbar from './components/Navbar';
+import NotFound from './components/NotFound';
 import PhishingWarning from './components/PhishingWarning';
 
 
@@ -22,7 +23,9 @@ function App() {
         <PhishingWarning phishingWarningState={{showWarning, setShowWarning}}/>
         <Navbar isWarningVisible={showWarning}/>
         <Routes>
+          <Route path='/' element={<Homepage />} />
           <Route path='home' element={<Homepage />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
         <Fab isFabVisible={fabVisible}/>
