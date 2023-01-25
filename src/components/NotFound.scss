@@ -1,0 +1,46 @@
+.not-found-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#280d5f;
+    background-color: #faf9fa;
+
+    img {
+        width: 60px;
+        flex: 0.15;
+    }
+
+    h1 {
+        font-size: 52px;
+        font-weight: bold;
+    }
+
+    p {
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    button {
+        appearance: none;
+        border: none;
+        width: 120px;
+        height: 32px;
+        border-radius: 20px;
+        background-color: #1fc7d4;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        box-shadow: rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset;   
+
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+    }
+
+
+
+}
