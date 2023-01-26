@@ -7,6 +7,7 @@ import eth from '../assets/images/navbar-images/etherium.png';
 import aptos from '../assets/images/navbar-images/aptos.png';
 import fee from '../assets/icons/feesvg.svg';
 import { useScrollDirection } from './Hooks/useScrollDirection';
+import NavbarItem from './NavbarItem';
 
 
 const Navbar = ({isWarningVisible}) => {
@@ -19,30 +20,20 @@ const Navbar = ({isWarningVisible}) => {
         >
             <section className="nav-left">
                 <ul>
-                    <li className="logo"><a href="#"><img src={logoDark} alt="" /></a></li>
+                    <li className="logo"><a href="/"><img src={logoDark} alt="" /></a></li>
                     <div className="item-wrapper">
-                        <li className="item trade">
-                            <a href="#">Trade</a>
-                            <div className="submenu1">
-                                <ul>
-                                    <li><a href="#">Swap</a></li>
-                                    <li><a href="#">Limit</a></li>
-                                    <li><a href="#">Liquidity</a></li>
-                                    <li><a href="#">Perpetual</a></li>
-                                    <li><a href="#">Bridge</a></li>
-                                </ul>
-                            </div>
-                        </li>
+
+                        <NavbarItem 
+                            itemName='Trade' 
+                            links={['Swap', 'Limit', 'Liquidity', 'Perpetual', 'Bridge']}     
+                        />
+
                     </div>
                     <div className="item-wrapper">
-                        <li className="item ern"><a href="#">Earn</a>
-                            <div className="submenu1 subm2">
-                                <ul>
-                                    <li><a href="#">Farms</a></li>
-                                    <li><a href="#">Pools</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                        <NavbarItem 
+                            itemName='Earn'
+                            links={['Farms', 'Pools']}
+                        />
                     </div>
                 <div className="item-wrapper">
                     <li className="item win">
@@ -58,15 +49,10 @@ const Navbar = ({isWarningVisible}) => {
                     </li>
                 </div>
                 <div className="item-wrapper">
-                    <li className="item nft"><a href="#">NFT</a>
-                        <div className="submenu1 subm4">
-                            <ul>
-                                <li><a href="#">Overview</a></li>
-                                <li><a href="#">Collections</a></li>
-                                <li><a href="#">Activity</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                    <NavbarItem 
+                        itemName='NFT' 
+                        links={['Overview', 'Collections', 'Activity']}
+                    />
                 </div>
 
                     <div className="dots-item-wrapper">
