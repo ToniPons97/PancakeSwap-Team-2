@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const NavbarItem = ({ itemName, links }) => {
     return (
         <li className="item">
-            <a href="#">{itemName}</a>
+            <Link to={'/' + links[0]}>{itemName}</Link>
             <div className="submenu1">
                 <ul>
                     {
