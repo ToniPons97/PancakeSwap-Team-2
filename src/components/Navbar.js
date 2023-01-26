@@ -8,6 +8,7 @@ import aptos from '../assets/images/navbar-images/aptos.png';
 import fee from '../assets/icons/feesvg.svg';
 import { useScrollDirection } from './Hooks/useScrollDirection';
 import NavbarItem from './NavbarItem';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = ({isWarningVisible}) => {
@@ -20,7 +21,7 @@ const Navbar = ({isWarningVisible}) => {
         >
             <section className="nav-left">
                 <ul>
-                    <li className="logo"><a href="/"><img src={logoDark} alt="" /></a></li>
+                    <li className="logo"><Link to='/'><img src={logoDark} alt="" /></Link></li>
                     <div className="item-wrapper">
 
                         <NavbarItem 
