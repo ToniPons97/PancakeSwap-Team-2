@@ -1,0 +1,30 @@
+.currency {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 10px;
+
+    img {
+        position: absolute;
+        left: -32px;
+
+        width: 24px;
+        transition: width ease 0.3s;
+    }
+
+    p {
+        color: #b8add2;
+        font-weight: bold;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        img {
+            width: 28px;
+            transition: width ease 0.3s;
+        }
+    }
+}

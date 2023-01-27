@@ -7,9 +7,9 @@ import instagram from '../assets/icons/instagram.svg';
 import github from '../assets/icons/github.svg';
 import discord from '../assets/icons/discord.svg';
 import medium from '../assets/icons/medium.svg';
-import logoRound512 from '../Full Logo/icon-round-512.png';
 import footerBtnRightArrow from '../assets/icons/header-btn-right-arrow.svg';
 import ThemeSwitcher from './ThemeSwitcher';
+import Currency from './Currency';
 
 const Footer = () => {
     return (
@@ -300,14 +300,14 @@ const Footer = () => {
                 </div>
                 </div>
                 <div id="footer-right">
-                <div>
-                    <img src={logoRound512} alt="" />
-                    <p>$4.003</p>
-                </div>
-                <button>
-                    <p>Buy CAKE</p>
-                    <img src={footerBtnRightArrow} alt="Right arrow." />
-                </button>
+
+
+                    <Currency />
+
+                    <button>
+                        <p>Buy CAKE</p>
+                        <img src={footerBtnRightArrow} alt="Right arrow." />
+                    </button>
                 </div>
             </div>
             </section>
