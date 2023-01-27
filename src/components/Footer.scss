@@ -239,38 +239,6 @@
     gap: 1rem;
     position: relative;
 
-    div:first-child {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 0.6rem;
-
-        &:hover {
-            cursor: pointer;
-
-            img {
-                width: 28px;
-                transition: width ease 0.3s;
-            }
-        }
-    }
-
-
-    img:first-child {
-        position: absolute;
-        left: -35px;
-
-        width: 24px;
-        transition: width ease 0.3s;
-    }
-
-    p {
-        color: #b8add2;
-        margin-top: 3px;
-        font-weight: bold;
-    }
-
     button {
         display: flex;
         flex-direction: row;

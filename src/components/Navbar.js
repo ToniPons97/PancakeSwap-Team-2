@@ -9,6 +9,7 @@ import fee from '../assets/icons/feesvg.svg';
 import { useScrollDirection } from './Hooks/useScrollDirection';
 import NavbarItem from './NavbarItem';
 import { Link } from 'react-router-dom';
+import Currency from './Currency';
 
 
 const Navbar = ({isWarningVisible}) => {
@@ -94,12 +95,7 @@ const Navbar = ({isWarningVisible}) => {
             </section >
             <section className="nav-right">
                 <ul>
-                    <li className="fee">
-                    <img src={fee} alt="" />
-                    <a href="#">
-                        <span className="dollars">$4.523</span>
-                    </a>
-                    </li>
+                     <Currency altColor='#7a6eaa'/>
                     <li className="lang-select">
                     <a href="#">
                         <svg className="top-right-icons" viewBox="0 0 24 24" color="textSubtle" width="24px" xmlns="http://www.w3.org/2000/svg">
