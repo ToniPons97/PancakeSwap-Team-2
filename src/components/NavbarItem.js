@@ -8,8 +8,8 @@ const NavbarItem = ({ itemName, links }) => {
                 <ul>
                     {
                         links.map(el => (
-                            <li >
-                                <Link key={crypto.randomUUID()} to={'/' + el}>
+                            <li key={crypto.randomUUID()}>
+                                <Link to={'/' + el}>
                                     {el}
                                 </Link>
                             </li>
