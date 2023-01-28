@@ -62,13 +62,10 @@ const HeaderSwipper = () => {
         bullets[counter].current.setAttribute('id', `${active}`);
     }
 
-    const handleBulletSelection = (event, intervalId) => {
+    const handleBulletSelection = (event) => {
         const clickedBullet = event.target.classList[1];
-
         const newCounterValue = Number(clickedBullet.split('-')[1]);
-        setCounter(prevValue => newCounterValue);
     }
-
     
     useEffect(() => {
         const intervalId = setInterval(() => {
