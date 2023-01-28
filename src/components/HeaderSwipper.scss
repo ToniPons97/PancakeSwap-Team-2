@@ -13,23 +13,21 @@
     h1.header-head-el:not(#header-win-lottery) {
         color: #e5ae48;
         font-size: 1.4rem;
-        //display: none;
     }
 
     #header-win-lottery {
-        //display: none;
         text-shadow: 0px 1px 10px black;
         font-size: 1.1rem;
     }
 }
 
 .ibrahim-head-margin {
-    margin-top: 15px;
+   margin-top: 15px;
 }
 
 .ibrahim-button {
-    position: relative;
-    top: 5px;
+    position: absolute;
+    bottom: 20px;
     border-radius: 15px;
     font-size: 14px;
     letter-spacing: 1px;
@@ -40,21 +38,14 @@
     background-color: #1fc7d4;
     color: #fff;
     box-shadow: rgba(14, 14, 44, 0.4) 0px -1px inset;
-    z-index: 4;position: relative;
+    z-index: 4;
     margin-bottom: 0;
 
     span {
-        //display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         gap: 0.2rem;
-
-        /*
-        &:nth-child(2), &:last-child {
-            display: none;
-        }
-        */
     }
 
     &:hover {
@@ -69,20 +60,12 @@
     font-size: 1rem;
 
     & h1 {
-        //display: none;
         text-shadow: 0px 2px 10px black;
     }
-
-    /*
-    & h1:first-child {
-        display: flex;
-    }
-    */
 }
 
 /* Header box images */
 #header-aptos-img {
-    //display: initial;
     position: absolute;
     top: -36px;
     right: 0px;
@@ -109,6 +92,8 @@
 
 /* Header pagination swippers*/
 #header-swipper-container {
+    position: absolute;
+    bottom: 20px;
     display: flex;
     flex-direction: row;
     align-self: center;
