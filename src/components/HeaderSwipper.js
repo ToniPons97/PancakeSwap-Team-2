@@ -39,11 +39,10 @@ const HeaderSwipper = () => {
 
     const imagesRefs = [aptosImgRef, lotteryImgRef, perpetualImgRef];
 
-    /* Container */
+    /* Toggle container linear gradient */
     const swipperContainerRef = useRef(null);
-
-    const updateBackground = (ref, selected) => {
-        if (selected === 0)
+    const updateBackground = (ref) => {
+        if (counter === 0)
             ref.current.style['background'] = 
                 'linear-gradient(rgb(0, 191, 165) 0%, rgb(0, 90, 90) 100%)';
         else
@@ -51,10 +50,29 @@ const HeaderSwipper = () => {
                 'linear-gradient(rgb(115, 67, 211) 0%, rgb(72, 44, 128) 100%)';
     }
 
+    /* Swipper bullets */
+    const bullet1Ref = useRef(null);
+    const bullet2Ref = useRef(null);
+    const bullet3Ref = useRef(null);
+
+    const bulletsRefs = [bullet1Ref, bullet2Ref, bullet3Ref];
+    const updateBullet = (bullets) => {
+        const active = 'header-bullet-active';
+        bullets[counter === 0 ? 2 : counter - 1].current.removeAttribute('id');
+        bullets[counter].current.setAttribute('id', `${active}`);
+    }
+
+    const handleBulletSelection = (event, intervalId) => {
+        const clickedBullet = event.target.classList[1];
+
+        const newCounterValue = Number(clickedBullet.split('-')[1]);
+        setCounter(prevValue => newCounterValue);
+    }
+
     
     useEffect(() => {
         const intervalId = setInterval(() => {
-            console.log(counter);
+            //console.log(counter);
 
 
             topElementsRefs[counter].current.style['display'] = 'flex';
@@ -75,11 +93,12 @@ const HeaderSwipper = () => {
                 middleElementsRefs[middleElementsRefs.length - 1].current.style['display'] = 'none';
             }
 
-            updateBackground(swipperContainerRef, counter);
+            updateBackground(swipperContainerRef);
+            updateBullet(bulletsRefs);
             setCounter(value => (value + 1) % topElementsRefs.length);
             
         }, 2000);
-
+        
         return () => {
             clearInterval(intervalId);
         }
@@ -120,9 +139,9 @@ const HeaderSwipper = () => {
             <img ref={lotteryImgRef} className="header-box-imgs" id="header-lottery-img" src={lottery} alt="Lottery." />
             <img ref={perpetualImgRef} className="header-box-imgs" id="header-perpetual-img" src={perpetual} alt="Perpetual." />
             <div id="header-swipper-container">
-                <div id="header-bullet-active" className="header-swipper"></div>
-                <div className="header-swipper"></div>
-                <div className="header-swipper"></div>
+                <div onClick={handleBulletSelection} ref={bullet1Ref} id="header-bullet-active" className="header-swipper bullet-0"></div>
+                <div onClick={handleBulletSelection} ref={bullet2Ref} className="header-swipper bullet-1"></div>
+                <div onClick={handleBulletSelection} ref={bullet3Ref} className="header-swipper bullet-2"></div>
             </div>
         </div>
     );
