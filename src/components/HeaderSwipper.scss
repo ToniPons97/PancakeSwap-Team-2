@@ -13,11 +13,11 @@
     h1.header-head-el:not(#header-win-lottery) {
         color: #e5ae48;
         font-size: 1.4rem;
-        display: none;
+        //display: none;
     }
 
     #header-win-lottery {
-        display: none;
+        //display: none;
         text-shadow: 0px 1px 10px black;
         font-size: 1.1rem;
     }
@@ -44,15 +44,17 @@
     margin-bottom: 0;
 
     span {
-        display: flex;
+        //display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         gap: 0.2rem;
 
+        /*
         &:nth-child(2), &:last-child {
             display: none;
         }
+        */
     }
 
     &:hover {
@@ -67,49 +69,20 @@
     font-size: 1rem;
 
     & h1 {
-        display: none;
+        //display: none;
         text-shadow: 0px 2px 10px black;
     }
 
+    /*
     & h1:first-child {
         display: flex;
     }
-
-    #header-counter {
-        position: relative;
-        bottom: 5px;
-        border-radius: 7px;
-        width: 200px;
-        height: 40px;
-        padding-left: 4px;
-        padding-top: 4px;
-        margin-bottom: 0;
-
-        display: none;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 1.8rem;
-        font-weight: bold;
-
-        background-image: linear-gradient(#3b1e77, #49258f);
-
-        span {
-            color: #fec317;
-            sub {
-                position: relative;
-                bottom: 6px;
-                font-size: 1rem;
-                margin-left: 3px;
-            }
-        }
-    }
+    */
 }
 
 /* Header box images */
 #header-aptos-img {
-    display: initial;
+    //display: initial;
     position: absolute;
     top: -36px;
     right: 0px;
@@ -134,7 +107,7 @@
     right: -6px;
 }
 
-/* Header pagination swappers*/
+/* Header pagination swippers*/
 #header-swipper-container {
     display: flex;
     flex-direction: row;
