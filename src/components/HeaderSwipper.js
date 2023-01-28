@@ -39,6 +39,18 @@ const HeaderSwipper = () => {
 
     const imagesRefs = [aptosImgRef, lotteryImgRef, perpetualImgRef];
 
+    /* Container */
+    const swipperContainerRef = useRef(null);
+
+    const updateBackground = (ref, selected) => {
+        if (selected === 0)
+            ref.current.style['background'] = 
+                'linear-gradient(rgb(0, 191, 165) 0%, rgb(0, 90, 90) 100%)';
+        else
+            ref.current.style['background'] =
+                'linear-gradient(rgb(115, 67, 211) 0%, rgb(72, 44, 128) 100%)';
+    }
+
     
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -56,14 +68,14 @@ const HeaderSwipper = () => {
                 buttonContentsRefs[(counter - 1) % buttonContentsRefs.length].current.style['display'] = 'none';
                 imagesRefs[(counter - 1) % imagesRefs.length].current.style['display'] = 'none';
                 middleElementsRefs[(counter - 1) % middleElementsRefs.length].current.style['display'] = 'none';
-            }
-            else {
+            } else {
                 topElementsRefs[topElementsRefs.length - 1].current.style['display'] = 'none';
                 buttonContentsRefs[buttonContentsRefs.length - 1].current.style['display'] = 'none';
                 imagesRefs[imagesRefs.length - 1].current.style['display'] = 'none';
                 middleElementsRefs[middleElementsRefs.length - 1].current.style['display'] = 'none';
             }
 
+            updateBackground(swipperContainerRef, counter);
             setCounter(value => (value + 1) % topElementsRefs.length);
             
         }, 2000);
@@ -77,7 +89,7 @@ const HeaderSwipper = () => {
 
 
     return (
-        <div className="ibrahim-rectangle">
+        <div ref={swipperContainerRef} className="ibrahim-rectangle">
             <img ref={topImgRef} style={{display: 'flex'}} className="header-head-el" src={aptosXps} height="20px" width="220px" />
             <h1 ref={topWinRef} style={{display: 'none'}} className="header-head-el" id="header-win-lottery">Win 62,729 in Lottery</h1>    
             <h1 ref={topPerpetualRef} style={{display: 'none'}} className="header-head-el">Perpetual Futures</h1>
@@ -85,11 +97,7 @@ const HeaderSwipper = () => {
 
             <div id="headTag" className="ibrahim-head-margin">
                 <h1 ref={middleHelloRef} style={{display: 'flex'}}>Hello Aptos Project Teams!</h1>
-
                 <SwipperCounter swipperRef={middleCounterRef} style={{display: 'none'}} />
-
-
-
                 <h1 ref={middleLeverageRef} style={{display: 'none'}}>UP TO 100x LEVERAGE</h1>
             </div>
             <div className="ibrahim-head-margin">
