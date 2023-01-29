@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const HeaderSwipper = () => {
     const [counter, setCounter] = useState(0);
+    const swipeTime = 6000;
     
     // Top Swipper Elements
     const topImgRef = useRef(null);
@@ -67,43 +68,42 @@ const HeaderSwipper = () => {
         const newCounterValue = Number(clickedBullet.split('-')[1]);
     }
     
+    
     useEffect(() => {
         const intervalId = setInterval(() => {
             //console.log(counter);
 
-
-            topElementsRefs[counter].current.style['display'] = 'flex';
-            buttonContentsRefs[counter].current.style['display'] = 'flex';
-            imagesRefs[counter].current.style['display'] = 'flex';
-            middleElementsRefs[counter].current.style['display'] = 'flex';
-            
-            
-            if (counter !== 0) {
-                topElementsRefs[(counter - 1) % topElementsRefs.length].current.style['display'] = 'none';
-                buttonContentsRefs[(counter - 1) % buttonContentsRefs.length].current.style['display'] = 'none';
-                imagesRefs[(counter - 1) % imagesRefs.length].current.style['display'] = 'none';
-                middleElementsRefs[(counter - 1) % middleElementsRefs.length].current.style['display'] = 'none';
-            } else {
-                topElementsRefs[topElementsRefs.length - 1].current.style['display'] = 'none';
-                buttonContentsRefs[buttonContentsRefs.length - 1].current.style['display'] = 'none';
-                imagesRefs[imagesRefs.length - 1].current.style['display'] = 'none';
-                middleElementsRefs[middleElementsRefs.length - 1].current.style['display'] = 'none';
-            }
-
-            updateBackground(swipperContainerRef);
-            updateBullet(bulletsRefs);
+            //if (counter === 1) {
+                topElementsRefs[counter].current.style['display'] = 'flex';
+                buttonContentsRefs[counter].current.style['display'] = 'flex';
+                imagesRefs[counter].current.style['display'] = 'flex';
+                middleElementsRefs[counter].current.style['display'] = 'flex';
+                
+                if (counter !== 0) {
+                    topElementsRefs[(counter - 1) % topElementsRefs.length].current.style['display'] = 'none';
+                    buttonContentsRefs[(counter - 1) % buttonContentsRefs.length].current.style['display'] = 'none';
+                    imagesRefs[(counter - 1) % imagesRefs.length].current.style['display'] = 'none';
+                    middleElementsRefs[(counter - 1) % middleElementsRefs.length].current.style['display'] = 'none';
+                } else {
+                    topElementsRefs[topElementsRefs.length - 1].current.style['display'] = 'none';
+                    buttonContentsRefs[buttonContentsRefs.length - 1].current.style['display'] = 'none';
+                    imagesRefs[imagesRefs.length - 1].current.style['display'] = 'none';
+                    middleElementsRefs[middleElementsRefs.length - 1].current.style['display'] = 'none';
+                }
+    
+                updateBackground(swipperContainerRef);
+                updateBullet(bulletsRefs);
+                
+            //}
             setCounter(value => (value + 1) % topElementsRefs.length);
             
-        }, 2000);
-        
+        }, swipeTime);
         return () => {
             clearInterval(intervalId);
         }
     }, [counter]);
     
-
-
-
+    
     return (
         <div ref={swipperContainerRef} className="ibrahim-rectangle">
             <img ref={topImgRef} style={{display: 'flex'}} className="header-head-el" src={aptosXps} height="20px" width="220px" />
@@ -113,7 +113,11 @@ const HeaderSwipper = () => {
 
             <div id="headTag" className="ibrahim-head-margin">
                 <h1 ref={middleHelloRef} style={{display: 'flex'}}>Hello Aptos Project Teams!</h1>
-                <SwipperCounter swipperRef={middleCounterRef} style={{display: 'none'}} />
+                <SwipperCounter 
+                    swipperRef={middleCounterRef} 
+                    style={{display: 'none'}} 
+                    time={{days: 1, hours: 0, minutes: 0, seconds: 15}}
+                />
                 <h1 ref={middleLeverageRef} style={{display: 'none'}}>UP TO 100x LEVERAGE</h1>
             </div>
             <div className="ibrahim-head-margin">
