@@ -116,7 +116,7 @@ const HeaderSwipper = () => {
                 <SwipperCounter 
                     swipperRef={middleCounterRef} 
                     style={{display: 'none'}} 
-                    time={{days: 1, hours: 0, minutes: 0, seconds: 15}}
+                    time={{days: 2, hours: 15, minutes: 20, seconds: 14}}
                 />
                 <h1 ref={middleLeverageRef} style={{display: 'none'}}>UP TO 100x LEVERAGE</h1>
             </div>
