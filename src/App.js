@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { AddLiquidity } from './components/AddLiquidity';
 
 import Fab from './components/Fab';
 import Footer from './components/Footer';
 import Homepage from './components/Homepage';
 import { useFabScroll } from './components/Hooks/useFabScroll';
+import { LiquidityHome } from './components/LiqudityHome';
 import Navbar from './components/Navbar';
 import NotFound from './components/NotFound';
 import PhishingWarning from './components/PhishingWarning';
@@ -23,9 +25,13 @@ function App() {
         <PhishingWarning phishingWarningState={{showWarning, setShowWarning}}/>
         <Navbar isWarningVisible={showWarning}/>
         <Routes>
+
           <Route path='/' element={<Homepage />} />
           <Route path='home' element={<Homepage />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='Liquidity' element={<LiquidityHome/>}/>
+          <Route path='add' element={<AddLiquidity/>}/>
+          
         </Routes>
         <Footer />
         <Fab isFabVisible={fabVisible}/>
