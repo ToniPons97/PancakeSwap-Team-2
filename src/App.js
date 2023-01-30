@@ -1,9 +1,5 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-
-import Fab from './components/Fab';
-import Footer from './components/Footer';
-import Homepage from './components/Homepage';
 import { useFabScroll } from './components/Hooks/useFabScroll';
 import { LiquidityHome } from './components/LiqudityHome';
 import { AddLiquidity } from './components/AddLiquidity';
@@ -13,10 +9,6 @@ import PhishingWarning from './components/PhishingWarning';
 import Fab from "./components/Fab";
 import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
-import { useFabScroll } from "./components/Hooks/useFabScroll";
-import Navbar from "./components/Navbar";
-import NotFound from "./components/NotFound";
-import PhishingWarning from "./components/PhishingWarning";
 import Graph from "./components/Graph";
 
 function App() {
