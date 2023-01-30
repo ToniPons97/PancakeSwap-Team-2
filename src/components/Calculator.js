@@ -1,6 +1,21 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faRepeat,
+  faRotateLeft,
+  faRotateRight,
+  faCog,
+  faChartSimple,
+} from "@fortawesome/free-solid-svg-icons";
+import bnbLogo from "../assets/icons/binance-coin-bnb-icon.svg";
+import cakeLogo from "../assets/icons/pancakeswap-cake-logo.svg";
 
-function Calculator() {
+function Calculator({
+  handleSwitchCoin,
+  handleGraphVisibility,
+  isGraphOn,
+  chartColor,
+}) {
   return (
     <div className="calculator">
       <div className="calc-top">
@@ -9,17 +24,32 @@ function Calculator() {
         </div>
         <p className="calc-info">Trade tokens in an instant</p>
         <div className="right-buttons">
-          <button className="graph-toggle">
-            <i className="fa-solid fa-chart-simple"></i>
+          <button onClick={handleGraphVisibility} className="graph-toggle">
+            <FontAwesomeIcon
+              icon={faChartSimple}
+              style={{
+                fontSize: "1.2rem",
+                color: isGraphOn ? "black" : "rgb(0,0,0,0.3)",
+              }}
+            ></FontAwesomeIcon>
           </button>
           <button className="settings">
-            <i className="fa fa-cog" aria-hidden="true"></i>
+            <FontAwesomeIcon
+              icon={faCog}
+              style={{ fontSize: "1.2rem" }}
+            ></FontAwesomeIcon>
           </button>
           <button className="recent-swaps">
-            <i className="fa-solid fa-rotate-left"></i>
+            <FontAwesomeIcon
+              icon={faRotateLeft}
+              style={{ fontSize: "1.2rem" }}
+            ></FontAwesomeIcon>
           </button>
           <button className="refresh">
-            <i className="fa-solid fa-rotate-right"></i>
+            <FontAwesomeIcon
+              icon={faRotateRight}
+              style={{ fontSize: "1.2rem" }}
+            ></FontAwesomeIcon>
           </button>
         </div>
       </div>
@@ -29,12 +59,12 @@ function Calculator() {
           <button className="first-coin-name calc-coins">
             <img
               id="coin-icon-1"
-              src="assets/binance-coin-bnb-icon.svg"
+              src={chartColor ? bnbLogo : cakeLogo}
               alt="coin-1-logo"
               height="20px"
               width="20px"
             />
-            BNB
+            {chartColor ? "BNB" : "CAKE"}
           </button>
           <form action="" method="get" className="first-coin-form">
             <input
@@ -46,19 +76,19 @@ function Calculator() {
           </form>
         </div>
         <div className="switch">
-          <button className="switch-button">
-            <i className="fa-solid fa-sm fa-repeat"></i>
+          <button onClick={handleSwitchCoin} className="switch-button">
+            <FontAwesomeIcon icon={faRepeat} style={{ fontSize: "1.2rem" }} />
           </button>
         </div>
         <div className="second-coin">
           <button className="second-coin-name calc-coins">
             <img
-              src="assets/pancakeswap-cake-logo.svg"
+              src={chartColor ? cakeLogo : bnbLogo}
               alt="coin-2-logo"
               height="20px"
               width="20px"
             />
-            CAKE
+            {chartColor ? "CAKE" : "BNB"}
           </button>
           <form action="" method="get" className="second-coin-form">
             <input

@@ -77,6 +77,11 @@
 .right-buttons {
   align-self: flex-end;
   padding-right: 10%;
+  padding-top: 1.3rem;
+}
+
+.right-buttons button {
+  padding-left: 1.2rem;
 }
 
 .calc-info {
