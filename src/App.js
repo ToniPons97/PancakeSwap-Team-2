@@ -1,7 +1,15 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import "./App.css";
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
+import Fab from './components/Fab';
+import Footer from './components/Footer';
+import Homepage from './components/Homepage';
+import { useFabScroll } from './components/Hooks/useFabScroll';
+import { LiquidityHome } from './components/LiqudityHome';
+import { AddLiquidity } from './components/AddLiquidity';
+import Navbar from './components/Navbar';
+import NotFound from './components/NotFound';
+import PhishingWarning from './components/PhishingWarning';
 import Fab from "./components/Fab";
 import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
@@ -27,6 +35,8 @@ function App() {
         <Route path="home" element={<Homepage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="swap" element={<Graph />} />
+        <Route path='Liquidity' element={<LiquidityHome/>}/>
+        <Route path='add' element={<AddLiquidity/>}/>
       </Routes>
       <Footer />
       <Fab isFabVisible={fabVisible} />
