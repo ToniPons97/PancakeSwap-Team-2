@@ -19,7 +19,7 @@ export function AddLiquidity() {
 	const navgate = useNavigate()
 	
 	function returnToHomepage() {
-		navgate('Liquidity')
+		navgate('/Liquidity')
 	}
 
 	return (
