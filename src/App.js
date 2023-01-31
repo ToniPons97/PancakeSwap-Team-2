@@ -18,6 +18,7 @@ function App() {
   // Custom hook to render Fab component conditionally.
   const { fabVisible, handleFabScrollEvent } = useFabScroll();
 
+  // Go to the top of the page on browser refresh.
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
