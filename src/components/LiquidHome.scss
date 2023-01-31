@@ -9,55 +9,7 @@
 	display: none;
 }
 
-.subHeadWraper {
-	display: grid;
-	grid-template-rows: 58% 42%;
-	width: 100%;
-	height: 98px;
-	background: #ffffff;
-
-	.trade-nav {
-		display: flex;
-		//position: relative;
-		//width: 100%;
-		background: #ffffffb3;
-		justify-content: center;
-		align-self: center;
-		gap: 20px;
-		//border-top: 1px solid #e7e3eb;
-		align-items: center;
-		//padding-top: 10px;
-
-		a {
-			font: 16px;
-			font-weight: bold;
-			color: #7a6eaa;
-		}
-		.liquidity {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			font-size: 16px;
-			font-weight: 600;
-			opacity: 1;
-
-			a {
-				color: #7645d9;
-				padding-bottom: 3px;
-			}
-			.underline {
-				width: 100%;
-				height: 4px;
-				background-color: #1fc7d4;
-				margin-bottom: -3px;
-				border-radius: 2px 2px 0px 0px;
-			}
-		}
-	}
-}
-
 .liquidity-main-area {
-	
 	display: grid;
 	grid-template-rows: 50% 30% 20%;
 	width: 100%;
@@ -80,7 +32,6 @@
 		height: 279px;
 		background: #fff;
 		overflow: hidden;
-		//position: relative;
 		z-index: 2;
 		border-radius: 24px;
 		box-shadow: 0 5px #eeee;
@@ -166,7 +117,9 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-	width: 100%;
+	width: 90%;
+	justify-self: center;
+	align-items: center;
 
 	.footer-right {
 		display: flex;

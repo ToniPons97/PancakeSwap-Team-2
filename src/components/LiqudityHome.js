@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './LiquidHome.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import SubNavbar from './SubNavbar';
 
-export function LiquidityHome() {
+export function LiquidityHome({ isWarningVisible }) {
 	const navGate = useNavigate();
 	
 	// go to second page (add liquidity)
@@ -19,22 +20,7 @@ export function LiquidityHome() {
 			<div>
 				{/* <!--this 'add-liquidity' is for changing the page by clicki the Add Liquidity--> */}
 				<div className="add-liquidityClick">
-					<div className="subHeadWraper">
-						<div className="main-nav">
-							{/*space for the main navBar*/}
-						</div>
-						<div className="trade-nav">
-							<Link to ="">Swap</Link>
-							<Link to ="">Limit</Link>
-							<div className="liquidity">
-							<Link to ="/">Liquidity</Link>
-								<div className="underline"></div>
-							</div>
-
-							<Link to ="">Perpertual</Link>
-							<Link to ="">Bridge</Link>
-						</div>
-					</div>
+					<SubNavbar isWarningVisible={isWarningVisible}/>
 					<div className="liquidity-main-area">
 						<div className="cardContainer">
 							<div id="liquid-card">
@@ -79,7 +65,6 @@ export function LiquidityHome() {
 									src="https://cdn.pancakeswap.com/help/help.png"
 									alt="Get
                               some help"
-									className="sc-8ebf47af-0 kqjEBp"
 									width="160"
 									height="108"
 								/>
