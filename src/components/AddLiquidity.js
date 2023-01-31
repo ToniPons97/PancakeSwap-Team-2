@@ -111,7 +111,7 @@ export function AddLiquidity() {
 
 								<div className="wrapLp">
 									<div className="hover">
-										<div className="lpText" font-size="12px">
+										<div className="lpText" fontSize="12px">
 											LP reward APR
 										</div>
 										<p className="tooltip2">
@@ -119,7 +119,7 @@ export function AddLiquidity() {
 											not account for impermanent loss
 										</p>
 									</div>
-									<div font-size="16px" className="down">
+									<div fontSize="16px" className="down">
 										0.76%
 									</div>
 								</div>
@@ -151,9 +151,8 @@ export function AddLiquidity() {
 								src="https://cdn.pancakeswap.com/help/help.png"
 								alt="Get
                         some help"
-								className="sc-8ebf47af-0 kqjEBp"
-								width="145"
-								height="97"
+								width="160px"
+								height="108px"
 							/>
 						</div>
 					</div>
