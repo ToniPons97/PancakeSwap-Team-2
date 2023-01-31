@@ -51,7 +51,7 @@ export function LiquidityHome() {
 										</div>
 									</div>
 									<div className="remove-lqd">
-										Remove liquidity to eeceive tokens back
+										Remove liquidity to receive tokens back
 									</div>
 								</div>
 
