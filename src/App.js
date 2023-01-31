@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useFabScroll } from './components/Hooks/useFabScroll';
 import { LiquidityHome } from './components/LiqudityHome';
@@ -18,6 +18,11 @@ function App() {
   // Custom hook to render Fab component conditionally.
   const { fabVisible, handleFabScrollEvent } = useFabScroll();
 
+  // Go to the top of the page on browser refresh.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div onScroll={handleFabScrollEvent}>
       <PhishingWarning phishingWarningState={{ showWarning, setShowWarning }} />
@@ -27,7 +32,7 @@ function App() {
         <Route path="home" element={<Homepage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="swap" element={<Graph />} />
-        <Route path='Liquidity' element={<LiquidityHome/>}/>
+        <Route path='Liquidity' element={<LiquidityHome isWarningVisible={showWarning}/>}/>
         <Route path='add' element={<AddLiquidity/>}/>
       </Routes>
       <Footer />
