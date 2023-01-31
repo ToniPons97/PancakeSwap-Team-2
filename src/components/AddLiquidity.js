@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
+import LiquidityBottom from './LiquidityBottom';
 
 library.add(faCircleQuestion);
 
@@ -141,21 +142,7 @@ export function AddLiquidity() {
 							</div>
 						</div>
 					</div>
-					<div className="footer-area2">
-						<Link to="">Bridge assets to BNB Chain</Link>
-						<div className="footer-right2">
-							<Link to ="https://docs.pancakeswap.finance/help">
-								Need help?
-							</Link>
-							<img
-								src="https://cdn.pancakeswap.com/help/help.png"
-								alt="Get
-                        some help"
-								width="160px"
-								height="108px"
-							/>
-						</div>
-					</div>
+					<LiquidityBottom />
 				</div>
 			</div>
 		</div>
