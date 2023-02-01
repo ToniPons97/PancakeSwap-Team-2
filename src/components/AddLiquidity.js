@@ -11,12 +11,12 @@ import {
 	faBowlingBall,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LiquidityBottom from './LiquidityBottom';
 
 library.add(faCircleQuestion);
 
-export function AddLiquidity() {
+export function AddLiquidity({ isWarningVisible }) {
 	const navgate = useNavigate()
 	
 	function returnToHomepage() {
@@ -28,7 +28,7 @@ export function AddLiquidity() {
 			<div className="seondPage-hide">
 				<header className="trade-nav2"></header>
 				<div className="liquidity-main-area2">
-					<div className="cardContainer2">
+					<div style={isWarningVisible ? {marginTop: '77px'} : {marginTop: '33px'}} className="cardContainer2">
 						<div id="liquid-card2">
 							<div className="card-top2">
 								<div className="arrDiv">

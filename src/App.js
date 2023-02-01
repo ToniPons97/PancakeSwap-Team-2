@@ -32,8 +32,8 @@ function App() {
         <Route path="home" element={<Homepage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="swap" element={<Graph />} />
-        <Route path='Liquidity' element={<LiquidityHome isWarningVisible={showWarning}/>}/>
-        <Route path='add' element={<AddLiquidity/>}/>
+        <Route path='Liquidity' element={<LiquidityHome isWarningVisible={showWarning} />}/>
+        <Route path='add' element={<AddLiquidity isWarningVisible={showWarning}/>} />
       </Routes>
       <Footer />
       <Fab isFabVisible={fabVisible} />
