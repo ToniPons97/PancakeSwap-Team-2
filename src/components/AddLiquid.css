@@ -1,0 +1,301 @@
+.trade-nav2 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.7019607843);
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.liquidity-main-area2 {
+  display: grid;
+  grid-template-rows: 65% 20% 15%;
+  width: 100%;
+  height: 92vh;
+  background: linear-gradient(139.73deg, #e5fdff, #f3efff);
+}
+.liquidity-main-area2 .innerpage-center {
+  display: flex;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 17px;
+}
+.liquidity-main-area2 .innerpage-center .textWraper {
+  padding: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.7019607843);
+  background: #fff;
+  border-radius: 16px;
+}
+.liquidity-main-area2 .innerpage-center .textWraper .tex-content {
+  width: 358px;
+  height: 84px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 14px;
+  color: #280d5f;
+  justify-content: center;
+}
+.liquidity-main-area2 .cardContainer2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 33px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  max-width: 434px;
+  width: 100%;
+  height: 392px;
+  background: #fff;
+  z-index: 1;
+  border-radius: 24px;
+  box-shadow: 0 0 3px rgba(218, 214, 214, 0.933);
+  border: 3px solid rgba(238, 238, 238, 0.9333333333);
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 {
+  display: flex;
+  justify-content: space-between;
+  height: 108;
+  border-bottom: 1px solid #eee;
+  height: 110px;
+  padding: 24px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .arrDiv {
+  display: flex;
+  align-items: center;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .arrDiv .fa-arrow-left {
+  width: 32px;
+  height: 32px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 {
+  display: flex;
+  flex-direction: column;
+  width: 338px;
+  justify-content: space-between;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems {
+  display: flex;
+  margin-bottom: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qnh2 {
+  display: inline-flex;
+  gap: 4px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qnh2 h2 {
+  color: #280d5f;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qnh2 .fa-circle-question {
+  color: #7645d9;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qnh2 .qtoolTip {
+  visibility: hidden;
+  position: absolute;
+  background-color: rgb(32, 30, 30);
+  color: #fffdff;
+  width: auto;
+  height: 100px;
+  padding: 1rem 1rem;
+  left: 50%;
+  transform: translate translate translate(-50%);
+  opacity: 1;
+  top: 19.2%;
+  border-radius: 19px;
+  z-index: 5;
+  font-size: 16px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qnh2 .qtoolTip::before {
+  content: "";
+  bottom: 100%;
+  position: absolute;
+  border-width: 15px;
+  border: 8px solid;
+  border-color: transparent transparent rgb(16, 15, 15);
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qhover:hover > .qtoolTip {
+  visibility: visible;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .twoIcons {
+  display: flex;
+  gap: 20px;
+  fill: #7a6eaa;
+  color: #7a6eaa;
+  font-size: 24px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .fa-gear:hover,
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .fa-clock-rotate-left:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .receiveLp {
+  color: #7a6eaa;
+  font-size: 14px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .btnConnet {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  padding: 15px;
+  margin: 20px;
+  background: #1fc7d4;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .btnConnet button {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  color: #eee;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center {
+  display: grid;
+  grid-template-rows: repeat(3 1fr);
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .chooseVp {
+  font: 14px;
+  padding: 24px;
+  color: #7645d9;
+  font-weight: bold;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  width: 380px;
+  height: 40px;
+  margin-left: 24px;
+  position: relative;
+  align-items: center;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .lbtndiv {
+  display: flex;
+  justify-content: center;
+  background: #eeeafa;
+  align-items: center;
+  width: 182px;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 16px;
+  position: relative;
+  align-items: center;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .lbtndiv .fa-plus {
+  width: 20px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .lbtndiv:hover {
+  background: #edecf5;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .lbtndiv .lbtn {
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+  height: 38px;
+  border: none;
+  background: none;
+  align-items: center;
+  cursor: pointer;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .lbtndiv .lbtn .itemnBNB {
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .lbtndiv .lbtn .itemnBNB .bnb {
+  color: #280d5f;
+  font-size: 16px;
+  font-weight: bold;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .rbtndiv {
+  display: flex;
+  justify-content: center;
+  background: #eeeafa;
+  align-items: center;
+  width: 182px;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .rbtndiv:hover {
+  background: #edecf5;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .rbtndiv .rbtn {
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+  height: 38px;
+  border: none;
+  background: none;
+  align-items: center;
+  cursor: pointer;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .rbtndiv .rbtn .cakeImg {
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .secondPbtns .rbtndiv .rbtn .cakeImg .cake {
+  color: #280d5f;
+  font-size: 16px;
+  font-weight: bold;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  font-size: 16px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp .lpText {
+  font-size: 12px;
+  color: #7645d9;
+  text-decoration-line: underline;
+  text-decoration-thickness: initial;
+  text-decoration-style: dotted;
+  text-decoration-color: #7a6eaa;
+  text-underline-offset: 0.1em;
+  font-weight: 600;
+  width: 100%;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp .tooltip2 {
+  visibility: hidden;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp .tooltip2 {
+  position: absolute;
+  background-color: rgb(32, 30, 30);
+  color: #fffdff;
+  width: auto;
+  height: 70px;
+  padding: 1rem;
+  left: 39%;
+  transform: translate(-50%);
+  opacity: 1;
+  bottom: 41.5%;
+  border-radius: 16px;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp .tooltip2::before {
+  content: "";
+  bottom: 100%;
+  position: absolute;
+  margin-left: 130px;
+  border-width: 15px;
+  border: 6px solid;
+  border-color: transparent transparent rgb(16, 15, 15);
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp .down {
+  font-weight: 600;
+  color: #1fc7d4;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .hover:hover > p.tooltip2 {
+  visibility: visible;
+}/*# sourceMappingURL=AddLiquid.css.map */

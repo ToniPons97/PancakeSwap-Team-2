@@ -1,0 +1,30 @@
+.footer-area {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 90%;
+	justify-self: center;
+	align-items: center;
+
+    a {
+        color: #1fc7d4;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+            text-decoration-thickness: 2px;
+        }
+    }
+
+	.footer-right {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		padding-bottom: 0;
+		float: right;
+		max-width: 816.6px;
+		height: 108px;
+	}
+}
