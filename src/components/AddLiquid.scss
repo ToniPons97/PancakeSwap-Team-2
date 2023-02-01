@@ -332,25 +332,4 @@
 			}
 		}
 	}
-
-	.footer-area2 {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		width: 90%;
-		justify-self: center;
-		align-items: center;
-
-		.footer-right2 {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: flex-end;
-			padding-bottom: 0;
-			float: right;
-			max-width: 816.6px;
-			width: 100%;
-			height: 108px;
-		}
-	}
 }

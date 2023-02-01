@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './LiquidHome.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import SubNavbar from './SubNavbar';
+import LiquidityBottom from './LiquidityBottom';
 
 export function LiquidityHome({ isWarningVisible }) {
 	const navGate = useNavigate();
@@ -55,21 +56,7 @@ export function LiquidityHome({ isWarningVisible }) {
 							</div>
 						</div>
 						<div className="empty-area"></div>
-						<div className="footer-area">
-							<Link to = "">Bridge assets to BNB Chain</Link>
-							<div className="footer-right">
-								<Link to ="https://docs.pancakeswap.finance/help">
-									Need help?
-								</Link>
-								<img
-									src="https://cdn.pancakeswap.com/help/help.png"
-									alt="Get
-                              some help"
-									width="160"
-									height="108"
-								/>
-							</div>
-						</div>
+						<LiquidityBottom />
 					</div>
 				</div>
 			</div>
