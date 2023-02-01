@@ -3,9 +3,10 @@
 	position: relative;
 	width: 100%;
 	height: 60px;
-	background: #ffffffb3;
+	background-color: #EDF5FF;
 	align-items: flex-end;
 	justify-content: center;
+	margin-top: 0;
 }
 
 .liquidity-main-area2 {
@@ -44,7 +45,7 @@
 	.cardContainer2 {
 		display: flex;
 		justify-content: center;
-		margin-top: 33px;
+		transition: margin-top ease-in 0.2s;
 
 		#liquid-card2 {
 			display: grid;
