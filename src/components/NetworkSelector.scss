@@ -1,3 +1,28 @@
+@use '../variables.scss' as f;
+
+:root {
+    --navbar-bg-color: #{f.$bgcolor};
+    --navbar-bg-color-dark: #{f.$bgcolor-dark};
+    --sublang-top-txt-color: #{f.$sublang-text-color};
+    --sublang-top-txt-color-alt: #{f.$sublang-text-color-alt};
+    --sublang-text-hover: #{f.$sublang-text-hover};
+    --sublang-text-hover-alt: #{f.$sublang-text-hover-alt};
+    --world-img: #{f.$world-img};
+    --world-img-alt: #{f.$world-img-alt};
+    --select-net-bg-color: #{f.$select-net-bg-color};
+    --select-net-bg-color-alt: #{f.$select-net-bg-color-alt};
+    --select-net-txt-color: #{f.$select-net-txt-color};
+    --select-net-txt-color-hover: #{f.$select-net-txt-color-hover};
+    --select-net-txt-color-hover-alt: #{f.$select-net-txt-color-hover-alt};
+    --select-net-txt-color-alt: #{f.$select-net-txt-color-alt};
+    --net-selection-bg-color: #{f.$net-selection-bg-color};
+    --net-selection-bg-color-alt: #{f.$net-selection-bg-color-alt};
+    --nav-item-hover: #{f.$nav-item-hover};
+    --nav-item-hover-alt: #{f.$nav-item-hover-alt};
+    --net-li-hover: 
+
+}
+
 #select-network-wrapper {
     height: 50px;
     margin-bottom: 0;
