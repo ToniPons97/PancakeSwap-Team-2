@@ -225,3 +225,23 @@ hr {
   width: 700px;
   height: 100%;
 }
+
+.hover-info {
+  position: absolute;
+  width: 300px;
+  background-color: rgb(39, 38, 44);
+  color: white;
+  transform: translate(105px, 290px);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.up-arrow {
+  position: absolute;
+  transform: translate(130px, -190px);
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top: 0;
+  border-bottom: 20px solid rgb(39, 38, 44);
+}

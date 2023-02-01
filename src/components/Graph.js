@@ -21,7 +21,7 @@ const Graph = (props) => {
   const [coinValue, setCoinValue] = useState("64");
   const [chartColor, setChartColor] = useState(false);
 
-  const [coinValues, setCoinValues] = useState(CreateData());
+  const [changeExchange, setChangeExchange] = useState(false);
   const [isGraphOn, setIsGraphOn] = useState(true);
 
   const turq = "rgb(104, 215, 224)";
@@ -46,20 +46,7 @@ const Graph = (props) => {
   }
 
   function handleSwitchCoin() {
-    const coinTimes = Object.keys(coinValues);
-    let updatedCoinValues = {};
-    coinTimes.forEach((key) => {
-      updatedCoinValues[key] = coinValues[key].map((time) => {
-        return {
-          time: time.time,
-          value: !chartColor
-            ? (1 / time.value).toFixed(3)
-            : Math.floor(1 / time.value),
-        };
-      });
-    });
-    setCoinValues(updatedCoinValues);
-    setChartColor((prev) => !prev);
+    setChangeExchange(!changeExchange);
   }
 
   return (
@@ -73,25 +60,26 @@ const Graph = (props) => {
             <div className="top-left">
               <img
                 id="coin-icon-1"
-                src={bnbLogo}
+                src={changeExchange ? bnbLogo : cakeLogo}
                 alt="coin-1-logo"
                 height="20px"
                 width="20px"
               />
               <img
-                src={cakeLogo}
+                src={changeExchange ? cakeLogo : bnbLogo}
                 alt="coin-2-logo"
                 height="20px"
                 width="20px"
               />
               <p>
-                <span className="coin1">{chartColor ? "BNB" : "CAKE"}</span>/
-                <span className="coin2">{chartColor ? "CAKE" : "BNB"}</span>
+                <span className="coin1">{changeExchange ? "BNB" : "CAKE"}</span>
+                /
+                <span className="coin2">{changeExchange ? "CAKE" : "BNB"}</span>
               </p>
               <button onClick={handleSwitchCoin} className="switch-btn">
                 <FontAwesomeIcon
                   style={{
-                    color: !chartColor ? turq : pinkish,
+                    color: !changeExchange ? turq : pinkish,
                     fontSize: "1.3rem",
                   }}
                   icon={faRepeat}
@@ -115,10 +103,10 @@ const Graph = (props) => {
             <div className="middle-left">
               <p>
                 <span className="coin-rate">{coinValue}</span>{" "}
-                {chartColor ? "BNB/CAKE" : "CAKE/BNB"}
+                {changeExchange ? "BNB/CAKE" : "CAKE/BNB"}
                 <span
                   style={{
-                    color: !chartColor ? turq : pinkish,
+                    color: !changeExchange ? turq : pinkish,
                   }}
                   className="coin-difference"
                 >
@@ -159,11 +147,11 @@ const Graph = (props) => {
             <ChartComponent
               buttonInfo={buttonInfo}
               handleSetCoinValue={handleSetCoinValue}
-              coinValues={coinValues}
               chartColor={chartColor}
               chartStyle={chartStyle}
               turq={turq}
               pinkish={pinkish}
+              changeExchange={changeExchange}
             ></ChartComponent>
           </div>
         </div>
@@ -173,6 +161,7 @@ const Graph = (props) => {
         handleGraphVisibility={handleGraphVisibility}
         isGraphOn={isGraphOn}
         chartColor={chartColor}
+        changeExchange={changeExchange}
       ></Calculator>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRepeat,
@@ -6,16 +6,24 @@ import {
   faRotateRight,
   faCog,
   faChartSimple,
+  faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import bnbLogo from "../assets/icons/binance-coin-bnb-icon.svg";
 import cakeLogo from "../assets/icons/pancakeswap-cake-logo.svg";
+import HoverInfoCard from "./HoverInfoCard";
 
 function Calculator({
   handleSwitchCoin,
   handleGraphVisibility,
   isGraphOn,
   chartColor,
+  changeExchange,
 }) {
+  const [isHover, setIsHover] = useState(false);
+
+  const handleHoverCard = () => {
+    setIsHover(!isHover);
+  };
   return (
     <div className="calculator">
       <div className="calc-top">
@@ -59,12 +67,12 @@ function Calculator({
           <button className="first-coin-name calc-coins">
             <img
               id="coin-icon-1"
-              src={chartColor ? bnbLogo : cakeLogo}
+              src={changeExchange ? bnbLogo : cakeLogo}
               alt="coin-1-logo"
               height="20px"
               width="20px"
             />
-            {chartColor ? "BNB" : "CAKE"}
+            {changeExchange ? "BNB" : "CAKE"}
           </button>
           <form action="" method="get" className="first-coin-form">
             <input
@@ -83,12 +91,12 @@ function Calculator({
         <div className="second-coin">
           <button className="second-coin-name calc-coins">
             <img
-              src={chartColor ? cakeLogo : bnbLogo}
+              src={changeExchange ? cakeLogo : bnbLogo}
               alt="coin-2-logo"
               height="20px"
               width="20px"
             />
-            {chartColor ? "CAKE" : "BNB"}
+            {changeExchange ? "CAKE" : "BNB"}
           </button>
           <form action="" method="get" className="second-coin-form">
             <input
@@ -106,10 +114,19 @@ function Calculator({
         <div className="slippage">
           <p>Slippage Tolerance</p>
           <p>0.5%</p>
+          <p onMouseEnter={handleHoverCard} onMouseLeave={handleHoverCard}>
+            <FontAwesomeIcon
+              icon={faQuestionCircle}
+              style={{
+                fontSize: "1.2rem",
+              }}
+            ></FontAwesomeIcon>
+          </p>
         </div>
         <div className="connect">
           <button className="connect-wallet">Connect Wallet</button>
         </div>
+        {isHover ? <HoverInfoCard></HoverInfoCard> : null}
       </div>
     </div>
   );
