@@ -18,9 +18,9 @@ const NetworkSelector = () => {
         const selectedClass = 'navbar-network-selected'
 
         const anchorTagsArr = Array.from(netSelectionRef.current.querySelectorAll('a'));
-        anchorTagsArr.map(a => {
+        anchorTagsArr.forEach(a => {
             if(a.classList.contains(selectedClass))
-                a.classList.remove(selectedClass);
+                a.classList.remove(selectedClass)
         });
 
         if (clickedEl.tagName === 'LI') {
