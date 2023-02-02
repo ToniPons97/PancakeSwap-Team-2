@@ -1,5 +1,5 @@
 @use "../variables.scss" as f;
-
+@use '../animations.scss';
 * {
     padding: 0;
     margin: 0;
@@ -454,6 +454,7 @@
         .sublanguage:hover {
             display: block;
             position: absolute;
+            animation: fadeIn ease-in 0.3s;
 
 
             ul {
