@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './SwipperCounter.scss';
 
-const SwipperCounter = ({ style, swipperRef, time = {days: 1, hours: 1, minutes: 1, seconds: 1} }) => {
+const SwipperCounter = ({ style, time = {days: 1, hours: 1, minutes: 1, seconds: 1} }) => {
     const [countdown, setCountdown] = useState(time);
 
     const handleCountdown = (countdown) => {
@@ -21,8 +21,6 @@ const SwipperCounter = ({ style, swipperRef, time = {days: 1, hours: 1, minutes:
                 }
             }
         }
-        
-
     }
 
     useEffect(() => {
@@ -36,7 +34,7 @@ const SwipperCounter = ({ style, swipperRef, time = {days: 1, hours: 1, minutes:
     }, []);
 
     return (
-        <div ref={swipperRef} style={style} id="header-counter">
+        <div style={style} id="header-counter">
             <span id="header-counter-days">
                 {countdown.days}<sub>d</sub>
             </span>
