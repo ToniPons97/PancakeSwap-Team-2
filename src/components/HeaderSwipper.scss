@@ -15,6 +15,10 @@
         font-size: 1.4rem;
     }
 
+    h1 {
+        display: flex;
+    }
+
     #header-win-lottery {
         text-shadow: 0px 1px 10px black;
         font-size: 1.1rem;
@@ -47,6 +51,7 @@
     margin-bottom: 0;
 
     span {
+        display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -69,17 +74,17 @@
     }
 }
 
+.header-box-imgs {
+    position: absolute;
+}
+
 /* Header box images */
 #header-aptos-img {
-    position: absolute;
     top: -36px;
     right: 0px;
-    z-index: 2;
 }
 
 #header-perpetual-img {
-    display: none;
-    position: absolute;
     top: -41px;
     right: 0px;
     width: 392px;
@@ -87,8 +92,6 @@
 }
 
 #header-lottery-img {
-    display: none;
-    position: absolute;
     width: 1105px;
     height: 222px;
     top: -24px;

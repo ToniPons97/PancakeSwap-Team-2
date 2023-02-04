@@ -23,6 +23,7 @@ function App() {
     window.scrollTo(0, 0);
   }, []);
 
+
   return (
     <div onScroll={handleFabScrollEvent}>
       <PhishingWarning phishingWarningState={{ showWarning, setShowWarning }} />
