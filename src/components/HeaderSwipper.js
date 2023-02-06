@@ -22,7 +22,7 @@ const HeaderSwipper = () => {
 
 
     //Temporary hook here
-    const {countdown} = useCountdown({days: 1, hours: 19, minutes: 34, seconds: 4});
+    //const {countdown} = useCountdown({days: 1, hours: 19, minutes: 34, seconds: 4});
 
     const sliderElements = [
         {
@@ -36,7 +36,7 @@ const HeaderSwipper = () => {
         }, 
         {
             top: <h1 className="header-head-el" id="header-win-lottery">Win 62,729 in Lottery</h1>,
-            middle: <SwipperCounter countdown={countdown}/>,
+            middle: <SwipperCounter />,
             bottom: <span>
                         <b>Play Now</b>
                         <img src={headerBtnRightArrow} alt="Right arrow." />

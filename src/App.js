@@ -10,6 +10,8 @@ import Fab from "./components/Fab";
 import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
 import Graph from "./components/Graph";
+import { useCountdownStore } from './components/state/countdownState';
+import { useCountdown } from './components/Hooks/useCountdown';
 
 function App() {
   // Phishing Warning state.
@@ -23,6 +25,8 @@ function App() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Start countdown.
+  useCountdown();
 
   return (
     <div onScroll={handleFabScrollEvent}>

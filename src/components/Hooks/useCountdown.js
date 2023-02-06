@@ -1,36 +1,64 @@
 import { useState, useEffect } from "react";
+import { useCountdownStore } from "../state/countdownState";
 
-export const useCountdown = (time = {days: 1, hours: 1, minutes: 1, seconds: 1}) => {
-    const [countdown, setCountdown] = useState(time);
+export const useCountdown = () => {
+    
+    const { decreaseDays, decreaseHours, decreaseMinutes, decreaseSeconds, 
+            resetHours, resetMinutes, resetSeconds} = useCountdownStore(
+        state => ({
+            decreaseDays: state.decreaseDays,
+            decreaseHours: state.decreaseHours,
+            decreaseMinutes: state.decreaseMinutes,
+            decreaseSeconds: state.decreaseSeconds,
+            resetHours: state.resetHours,
+            resetMinutes: state.resetMinutes,
+            resetSeconds: state.resetSeconds
+        }));
 
-    const handleCountdown = () => {
-        let {days, hours, minutes, seconds} = countdown;
-
-        if (seconds > 0) {
-            return {...countdown, seconds: countdown.seconds - 1};
-        } else {
-            if (minutes > 0) {
-                return {...countdown, seconds: 59, minutes: countdown.minutes - 1};
+        const { days, hours, minutes, seconds } = useCountdownStore(
+            state => ({
+                days: state.days, 
+                hours: state.hours, 
+                minutes: state.minutes, 
+                seconds: state.seconds
+            })
+        );
+        
+        const handleCountdown = () => {        
+            
+            if (seconds > 0) {
+                decreaseSeconds();
             } else {
-                if (hours > 0) {
-                    return {...countdown, hours: countdown.hours - 1, minutes: 59, seconds: 59};
+                resetSeconds();
+                
+                if (minutes > 0) {
+                    decreaseMinutes();
+                    resetSeconds();
                 } else {
-                    if (days > 0)
-                        return {...countdown, hours: 23, minutes: 59, seconds: 59, days: countdown.days - 1};
+                    if (hours > 0) {
+                        resetSeconds();
+                        resetMinutes();
+                        decreaseHours();
+                    } else {
+                        if (days > 0)
+                        resetHours();
+                        resetMinutes();
+                        resetSeconds();
+                        decreaseDays();
+                    }
                 }
+                
             }
+            
         }
-    }
-
+        
     useEffect(() => {
         const intervalID = setInterval(() => {
-            setCountdown(countdown => handleCountdown(countdown));
+            handleCountdown();
         }, 1000);
 
         return () => {
             clearInterval(intervalID);
         }
-    }, [countdown]);
-
-    return { countdown };
-} 
+    }, [handleCountdown]);
+}
