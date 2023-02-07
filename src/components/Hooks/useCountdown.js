@@ -3,54 +3,42 @@ import { useCountdownStore } from "../state/countdownState";
 
 export const useCountdown = () => {
     
-    const { decreaseDays, decreaseHours, decreaseMinutes, decreaseSeconds, 
-            resetHours, resetMinutes, resetSeconds} = useCountdownStore(
-        state => ({
-            decreaseDays: state.decreaseDays,
-            decreaseHours: state.decreaseHours,
-            decreaseMinutes: state.decreaseMinutes,
-            decreaseSeconds: state.decreaseSeconds,
-            resetHours: state.resetHours,
-            resetMinutes: state.resetMinutes,
-            resetSeconds: state.resetSeconds
-        }));
+    const { days, hours, minutes, seconds } = useCountdownStore(state => state.countdown);
+    
+    const decreaseDays = useCountdownStore(state => state.decreaseDays);
+    const decreaseHours = useCountdownStore(state => state.decreaseHours);
+    const decreaseMinutes = useCountdownStore(state => state.decreaseMinutes);
+    const decreaseSeconds = useCountdownStore(state => state.decreaseSeconds);
 
-        const { days, hours, minutes, seconds } = useCountdownStore(
-            state => ({
-                days: state.days, 
-                hours: state.hours, 
-                minutes: state.minutes, 
-                seconds: state.seconds
-            })
-        );
+    const resetHours = useCountdownStore(state => state.resetHours);
+    const resetMinutes = useCountdownStore(state => state.resetMinutes);
+    const resetSeconds = useCountdownStore(state => state.resetSeconds);
+            
+    const handleCountdown = () => {        
         
-        const handleCountdown = () => {        
+        if (seconds > 0) {
+            decreaseSeconds();
+        } else {
+            resetSeconds();
             
-            if (seconds > 0) {
-                decreaseSeconds();
-            } else {
+            if (minutes > 0) {
+                decreaseMinutes();
                 resetSeconds();
-                
-                if (minutes > 0) {
-                    decreaseMinutes();
+            } else {
+                if (hours > 0) {
                     resetSeconds();
+                    resetMinutes();
+                    decreaseHours();
                 } else {
-                    if (hours > 0) {
-                        resetSeconds();
-                        resetMinutes();
-                        decreaseHours();
-                    } else {
-                        if (days > 0)
-                        resetHours();
-                        resetMinutes();
-                        resetSeconds();
-                        decreaseDays();
-                    }
+                    if (days > 0)
+                    resetHours();
+                    resetMinutes();
+                    resetSeconds();
+                    decreaseDays();
                 }
-                
             }
-            
         }
+    }
         
     useEffect(() => {
         const intervalID = setInterval(() => {

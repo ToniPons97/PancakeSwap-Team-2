@@ -2,12 +2,7 @@ import { useCountdownStore } from './state/countdownState';
 import './SwipperCounter.scss';
 
 const SwipperCounter = ({ style }) => {
-    const { days, hours, minutes, seconds } = useCountdownStore(state => ({
-        days: state.days,
-        hours: state.hours,
-        minutes: state.minutes,
-        seconds: state.seconds
-    }));
+    const { days, hours, minutes, seconds } = useCountdownStore(state => state.countdown);
 
 
     return (

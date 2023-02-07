@@ -10,7 +10,6 @@ import Fab from "./components/Fab";
 import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
 import Graph from "./components/Graph";
-import { useCountdownStore } from './components/state/countdownState';
 import { useCountdown } from './components/Hooks/useCountdown';
 
 function App() {
