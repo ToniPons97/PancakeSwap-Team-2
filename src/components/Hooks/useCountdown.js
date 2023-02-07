@@ -1,36 +1,52 @@
 import { useState, useEffect } from "react";
+import { useCountdownStore } from "../state/countdownState";
 
-export const useCountdown = (time = {days: 1, hours: 1, minutes: 1, seconds: 1}) => {
-    const [countdown, setCountdown] = useState(time);
+export const useCountdown = () => {
+    
+    const { days, hours, minutes, seconds } = useCountdownStore(state => state.countdown);
+    
+    const decreaseDays = useCountdownStore(state => state.decreaseDays);
+    const decreaseHours = useCountdownStore(state => state.decreaseHours);
+    const decreaseMinutes = useCountdownStore(state => state.decreaseMinutes);
+    const decreaseSeconds = useCountdownStore(state => state.decreaseSeconds);
 
-    const handleCountdown = () => {
-        let {days, hours, minutes, seconds} = countdown;
-
+    const resetHours = useCountdownStore(state => state.resetHours);
+    const resetMinutes = useCountdownStore(state => state.resetMinutes);
+    const resetSeconds = useCountdownStore(state => state.resetSeconds);
+            
+    const handleCountdown = () => {        
+        
         if (seconds > 0) {
-            return {...countdown, seconds: countdown.seconds - 1};
+            decreaseSeconds();
         } else {
+            resetSeconds();
+            
             if (minutes > 0) {
-                return {...countdown, seconds: 59, minutes: countdown.minutes - 1};
+                decreaseMinutes();
+                resetSeconds();
             } else {
                 if (hours > 0) {
-                    return {...countdown, hours: countdown.hours - 1, minutes: 59, seconds: 59};
+                    resetSeconds();
+                    resetMinutes();
+                    decreaseHours();
                 } else {
                     if (days > 0)
-                        return {...countdown, hours: 23, minutes: 59, seconds: 59, days: countdown.days - 1};
+                    resetHours();
+                    resetMinutes();
+                    resetSeconds();
+                    decreaseDays();
                 }
             }
         }
     }
-
+        
     useEffect(() => {
         const intervalID = setInterval(() => {
-            setCountdown(countdown => handleCountdown(countdown));
+            handleCountdown();
         }, 1000);
 
         return () => {
             clearInterval(intervalID);
         }
-    }, [countdown]);
-
-    return { countdown };
-} 
+    }, [handleCountdown]);
+}
