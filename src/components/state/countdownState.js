@@ -10,4 +10,4 @@ export const useCountdownStore = create(set => ({
     resetHours: () => set(state => ({countdown: {...state.countdown, hours: 23}})),
     resetMinutes: () => set(state => ({countdown: {...state.countdown, minutes: 59}})),
     resetSeconds: () => set(state => ({countdown: {...state.countdown, seconds: 59}}))
-    }));
+}));

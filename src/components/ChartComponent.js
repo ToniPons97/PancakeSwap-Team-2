@@ -194,7 +194,7 @@ export default function ChartComponent(props) {
         borderColor: props.changeExchange
           ? "rgba(255, 99, 132, 0.5)"
           : "rgb(104, 215, 224, 0.5)",
-        backgroundColor: (context: ScriptableContext<"line">) => {
+        backgroundColor: (context) => {
           const ctx = context.chart.ctx;
           const gradient = ctx.createLinearGradient(0, 0, 0, 350);
           gradient.addColorStop(
@@ -224,7 +224,7 @@ export default function ChartComponent(props) {
         borderColor: props.changeExchange
           ? "rgba(255, 99, 132, 0.5)"
           : "rgb(104, 215, 224, 0.5)",
-        backgroundColor: (context: ScriptableContext<"line">) => {
+        backgroundColor: (context) => {
           const ctx = context.chart.ctx;
           const gradient = ctx.createLinearGradient(0, 0, 0, 350);
           gradient.addColorStop(
@@ -253,7 +253,7 @@ export default function ChartComponent(props) {
         borderColor: props.changeExchange
           ? "rgba(255, 99, 132, 0.5)"
           : "rgb(104, 215, 224, 0.5)",
-        backgroundColor: (context: ScriptableContext<"line">) => {
+        backgroundColor: (context) => {
           const ctx = context.chart.ctx;
           const gradient = ctx.createLinearGradient(0, 0, 0, 350);
           gradient.addColorStop(
@@ -283,7 +283,7 @@ export default function ChartComponent(props) {
         borderColor: props.changeExchange
           ? "rgba(255, 99, 132, 0.5)"
           : "rgb(104, 215, 224, 0.5)",
-        backgroundColor: (context: ScriptableContext<"line">) => {
+        backgroundColor: (context) => {
           const ctx = context.chart.ctx;
           const gradient = ctx.createLinearGradient(0, 0, 0, 350);
           gradient.addColorStop(

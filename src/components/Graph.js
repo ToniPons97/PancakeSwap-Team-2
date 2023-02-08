@@ -57,11 +57,8 @@ const Graph = (props) => {
   }
 
   return (
-    <div
-      style={{ paddingTop: props.showWarning ? "80px" : "0px" }}
-      className="page"
-    >
-      <SubNavbar></SubNavbar>
+    <div className="page">
+      <SubNavbar isWarningVisible={props.showWarning}></SubNavbar>
       <div
         style={isGraphOn ? null : { justifyContent: "center" }}
         className="main"
