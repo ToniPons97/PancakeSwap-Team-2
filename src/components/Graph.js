@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import bnbLogo from "../assets/icons/binance-coin-bnb-icon.svg";
 import cakeLogo from "../assets/icons/pancakeswap-cake-logo.svg";
+import { Helmet } from "react-helmet";
 
 const Graph = (props) => {
   //States
@@ -58,6 +59,9 @@ const Graph = (props) => {
 
   return (
     <div className="page">
+      <Helmet>
+        <title>Exchange | PancakeSwap</title>
+      </Helmet>
       <SubNavbar isWarningVisible={props.showWarning}></SubNavbar>
       <div
         style={isGraphOn ? null : { justifyContent: "center" }}
