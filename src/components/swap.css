@@ -215,7 +215,14 @@ hr {
   border-radius: 10px;
   border: none;
   background-color: rgb(104, 215, 224);
+  box-shadow: rgba(14, 14, 44, 0.4) 0px -1px inset;
   margin-bottom: 50px;
+}
+
+.connect-wallet:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .trade-nav .tradeNav-item a {
