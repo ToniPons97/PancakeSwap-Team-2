@@ -179,7 +179,7 @@ export default function ChartComponent(props) {
     { time: "10:30 PM", value: "64" },
     { time: "12:30 PM", value: "60" },
   ];
-
+  props.getLastCoinValue(getExchange(0));
   const yearChart = {
     labels: dataYear.map((label) => label.time),
     datasets: [
