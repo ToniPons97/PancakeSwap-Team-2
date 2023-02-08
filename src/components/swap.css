@@ -228,6 +228,8 @@ hr {
   height: 100%;
 }
 
+@import url('../animations.scss');
+
 .hover-info {
   position: absolute;
   width: 300px;
@@ -236,6 +238,7 @@ hr {
   transform: translate(105px, 290px);
   padding: 10px;
   border-radius: 10px;
+  animation: fadeIn ease-in 0.3s;
 }
 
 .up-arrow {
