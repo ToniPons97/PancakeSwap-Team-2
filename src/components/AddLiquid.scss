@@ -170,13 +170,18 @@
         background: #1fc7d4;
         border: none;
         border-radius: 16px;
-        cursor: pointer;
-
+        box-shadow: rgba(14, 14, 44, 0.4) 0px -1px inset;
+        
+        &:hover {
+          transition: opacity 0.3s;
+          opacity: 0.6;
+          cursor: pointer;
+        }
+        
         button {
+          color: #eee;
           background: inherit;
           border: none;
-          cursor: pointer;
-          color: #eee;
         }
       }
 
