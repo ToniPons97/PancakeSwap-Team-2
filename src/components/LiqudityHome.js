@@ -1,5 +1,5 @@
 import React from 'react';
-import { faGear, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons';
+import { faGear, faClockRotateLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './LiquidHome.scss';
@@ -50,7 +50,7 @@ export function LiquidityHome({ isWarningVisible }) {
 									onClick={addLiquidity}
 									className="add-liquidity"
 								>
-									<i className="fa-solid fa-plus"></i>
+									<FontAwesomeIcon className='liquidity-plus' icon={faPlus} />
 									<h2>Add Liquidity</h2>
 								</button>
 							</div>
