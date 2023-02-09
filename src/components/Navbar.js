@@ -2,12 +2,11 @@ import './Navbar.scss';
 import logoDark from '../Full Logo/color-black.svg';
 import dots from '../assets/icons/dots.svg';
 import submenuLink from '../assets/icons/submenu-link.svg';
-import bnb from '../assets/images/navbar-images/bnb.png';
-import eth from '../assets/images/navbar-images/etherium.png';
-import aptos from '../assets/images/navbar-images/aptos.png';
-import fee from '../assets/icons/feesvg.svg';
 import { useScrollDirection } from './Hooks/useScrollDirection';
 import NavbarItem from './NavbarItem';
+import { Link } from 'react-router-dom';
+import Currency from './Currency';
+import NetworkSelector from './NetworkSelector';
 
 
 const Navbar = ({isWarningVisible}) => {
@@ -20,7 +19,7 @@ const Navbar = ({isWarningVisible}) => {
         >
             <section className="nav-left">
                 <ul>
-                    <li className="logo"><a href="/"><img src={logoDark} alt="" /></a></li>
+                    <li className="logo"><Link to='/'><img src={logoDark} alt="" /></Link></li>
                     <div className="item-wrapper">
 
                         <NavbarItem 
@@ -93,12 +92,7 @@ const Navbar = ({isWarningVisible}) => {
             </section >
             <section className="nav-right">
                 <ul>
-                    <li className="fee">
-                    <img src={fee} alt="" />
-                    <a href="#">
-                        <span className="dollars">$4.523</span>
-                    </a>
-                    </li>
+                     <Currency altColor='#7a6eaa'/>
                     <li className="lang-select">
                     <a href="#">
                         <svg className="top-right-icons" viewBox="0 0 24 24" color="textSubtle" width="24px" xmlns="http://www.w3.org/2000/svg">
@@ -166,45 +160,9 @@ const Navbar = ({isWarningVisible}) => {
                     </svg>
                     </a>
                     </li>
-                    <li id="select-network-wrapper">
-                    <div id="select-network">
-                        <img id="selection-icon" src={bnb} alt="" />
-                        <p>
-                        BNB Smart Chain
-                        </p> 
-                        <svg id="network-down-arrow" viewBox="0 0 24 24" color="text" width="24px" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.11997 9.29006L12 13.1701L15.88 9.29006C16.27 8.90006 16.9 8.90006 17.29 9.29006C17.68 9.68006 17.68 10.3101 
-                            17.29 10.7001L12.7 15.2901C12.31 15.6801 11.68 15.6801 11.29 15.2901L6.69997 10.7001C6.30997 10.3101 6.30997 9.68006 
-                            6.69997 9.29006C7.08997 8.91006 7.72997 8.90006 8.11997 9.29006Z">
-                        </path>
-                        </svg>
-                        <ul id="network-selection"> 
-                        <li>
-                            <a href="#">
-                            Select a Network
-                            </a>
-                        </li>
-                        <li>
-                            <img src={bnb} alt="" />
-                            <a href="#" className="navbar-network-selected">
-                            BNB Smart Chain
-                            </a>
-                        </li>
-                        <li>
-                            <img src={eth} alt="" />
-                            <a href="#">
-                            Ethereum
-                            </a>
-                        </li>
-                        <li>
-                            <img src={aptos} alt="" />
-                            <a href="#">
-                            Aptos
-                            </a>
-                        </li>
-                        </ul>
-                    </div>
-                    </li>
+
+                    <NetworkSelector />
+
                     <li className="connect">
                     <button>Connect Wallet</button>
                     </li>

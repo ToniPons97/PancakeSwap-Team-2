@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Kanit, sans-serif;
+}
+
+.closeLiquidityHome {
+  display: none;
+}
+
+.subHeadWraper {
+  display: grid;
+  grid-template-rows: 58% 42%;
+  width: 100%;
+  height: 98px;
+  background: #ffffff;
+}
+.subHeadWraper .trade-nav {
+  display: flex;
+  position: relative;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7019607843);
+  justify-content: center;
+  gap: 20px;
+  border-top: 1px solid #e7e3eb;
+  align-items: center;
+  padding-top: 10px;
+}
+.subHeadWraper .trade-nav a {
+  font: 16px;
+  font-weight: bold;
+  color: #7a6eaa;
+}
+.subHeadWraper .trade-nav .liquidity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 1;
+}
+.subHeadWraper .trade-nav .liquidity a {
+  color: #7645d9;
+  padding-bottom: 3px;
+}
+.subHeadWraper .trade-nav .liquidity .underline {
+  width: 100%;
+  height: 4px;
+  background-color: #1fc7d4;
+  margin-bottom: -3px;
+  border-radius: 2px 2px 0px 0px;
+}
+
+.liquidity-main-area {
+  display: grid;
+  grid-template-rows: 50% 30% 20%;
+  width: 100%;
+  height: 87vh;
+  background: linear-gradient(139.73deg, #e5fdff, #f3efff);
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  height: 279px;
+  position: relative;
+}
+.cardContainer #liquid-card {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  min-width: 434px;
+  height: 279px;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  border-radius: 24px;
+  box-shadow: 0 5px rgba(238, 238, 238, 0.9333333333);
+  border: 3px solid rgba(238, 238, 238, 0.9333333333);
+}
+.cardContainer #liquid-card .card-top {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  justify-content: space-between;
+  height: 110;
+}
+.cardContainer #liquid-card .card-top .your-liquid {
+  display: flex;
+  justify-content: space-between;
+  font: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+.cardContainer #liquid-card .card-top .your-liquid .icons {
+  display: flex;
+  justify-items: flex-end;
+  gap: 20px;
+  margin: 5px;
+  fill: #7a6eaa;
+  color: #7a6eaa;
+  font-size: 24px;
+}
+.cardContainer #liquid-card .card-top .your-liquid h2 {
+  color: #280d5f;
+}
+.cardContainer #liquid-card .card-top .your-liquid .icons .fa-gear,
+.cardContainer #liquid-card .card-top .your-liquid .fa-clock-rotate-left {
+  cursor: pointer;
+  color: #7a6eaa;
+}
+.cardContainer #liquid-card .card-top .your-liquid .icons .fa-gear,
+.cardContainer #liquid-card .card-top .your-liquid .fa-clock-rotate-left:hover {
+  cursor: pointer;
+  color: #7a6eaa color 2s ease-out 100ms;
+}
+.cardContainer #liquid-card .card-top .remove-lqd {
+  color: #7a6eaa;
+  font-size: 14px;
+}
+.cardContainer #liquid-card .connect-toWallet {
+  background: rgba(238, 238, 238, 0.9333333333);
+  padding: 24px;
+  text-align: center;
+  color: #7a6eaa;
+  margin: 0;
+}
+.cardContainer #liquid-card button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  gap: 6px;
+  padding: 15px;
+  margin: 0 18px;
+  background: #1fc7d4;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.cardContainer #liquid-card button h2,
+.cardContainer #liquid-card button i {
+  color: #fff;
+}
+.cardContainer #liquid-card button i {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.footer-area .footer-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 0;
+  float: right;
+  max-width: 816.6px;
+  height: 108px;
+}/*# sourceMappingURL=LiquidHome.css.map */

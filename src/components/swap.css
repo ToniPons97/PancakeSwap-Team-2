@@ -1,0 +1,259 @@
+.main {
+  background-color: rgb(239, 244, 255);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 13%;
+  padding-right: 13%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.graph {
+  width: 720px;
+  height: 100%;
+  background-color: rgb(245, 252, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+  padding: 0px 10px;
+}
+
+.top {
+  width: 700px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.top-left {
+  display: flex;
+  align-items: center;
+}
+
+.top-right button {
+  background: none;
+  border: none;
+}
+
+.middle {
+  width: 700px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calculator {
+  width: 300px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+.coin-rate {
+  font-size: 1.5rem;
+}
+
+.coin-difference {
+  color: rgb(49, 208, 170);
+}
+
+.calc-top {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.right-buttons {
+  align-self: flex-end;
+  padding-right: 10%;
+  padding-top: 1.3rem;
+}
+
+.right-buttons button {
+  padding-left: 1.2rem;
+}
+
+.calc-info {
+  font-size: 0.8rem;
+  margin-top: 0;
+  padding-left: 10%;
+}
+
+.swap-title {
+  width: 300px;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  padding-left: 10%;
+}
+
+hr {
+  margin-top: 20px;
+  height: 1px;
+  width: 100%;
+}
+
+.calc-mid {
+  margin-top: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs {
+  margin-top: 5px;
+  height: 50px;
+  width: 250px;
+  text-align: end;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(238, 234, 244);
+}
+
+.calc-coins {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+}
+
+.switch {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.switch-button {
+  width: 40px;
+  color: rgb(104, 215, 224);
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(238, 234, 244);
+}
+
+.scan-risk {
+  align-self: flex-end;
+}
+
+.slippage {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.connect {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.middle-right {
+  background-color: #eff4f5;
+  border-radius: 20px;
+  height: 30px;
+}
+
+.btn {
+  color: rgb(104, 215, 224);
+  font-size: 1.1rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #eff4f5;
+  width: 60px;
+  padding: 3px 0px;
+}
+
+.clicked {
+  color: white;
+  background-color: rgb(104, 215, 224);
+}
+
+.middle-right button:hover {
+  color: rgb(149, 229, 236);
+}
+
+.switch-btn {
+  color: rgb(104, 215, 224);
+  border: none;
+  background: none;
+  margin-left: 10px;
+}
+
+.switch-btn:hover {
+  color: rgb(66, 175, 185);
+  cursor: pointer;
+}
+
+.switch-btn:active {
+  transform: translateY(2px);
+}
+
+.right-buttons button {
+  background: none;
+  border: none;
+}
+
+.connect-wallet {
+  margin-top: 50px;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  color: white;
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(104, 215, 224);
+  box-shadow: rgba(14, 14, 44, 0.4) 0px -1px inset;
+  margin-bottom: 50px;
+}
+
+.connect-wallet:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.trade-nav .tradeNav-item a {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#tvchart {
+  width: 700px;
+  height: 100%;
+}
+
+@import url('../animations.scss');
+
+.hover-info {
+  position: absolute;
+  width: 300px;
+  background-color: rgb(39, 38, 44);
+  color: white;
+  transform: translate(105px, 290px);
+  padding: 10px;
+  border-radius: 10px;
+  animation: fadeIn ease-in 0.3s;
+}
+
+.up-arrow {
+  position: absolute;
+  transform: translate(130px, -190px);
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top: 0;
+  border-bottom: 20px solid rgb(39, 38, 44);
+}
