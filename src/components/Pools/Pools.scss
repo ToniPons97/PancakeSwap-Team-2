@@ -10,8 +10,8 @@
     padding: i.$ibrahim-pools-head-padding;
     text-indent: 18%;
     font-weight: bolder; // for now
-    margin-top: 160px;
     // height: 200px;
+    transition: margin-top ease-in 0.2s;
 }
 
 .ibrahim-pool-head-text1 {
@@ -34,7 +34,8 @@
 .ibrahim-pool-middle {
     display: grid;
     justify-content: center;
-    height: 851px;
+    //height: 851px;
+    height: 60vh;
 }
 
 .ibrahim-pool-middle-head {

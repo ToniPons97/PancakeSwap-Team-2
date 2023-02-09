@@ -37,7 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="home" element={<Homepage />} />
-        <Route path="/pools" element={<Pools />} />
+        <Route path="/pools" element={<Pools isWarningVisible={showWarning} />} />
         <Route path="*" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
         <Route path="swap" element={<Graph showWarning={showWarning} />} />

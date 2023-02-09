@@ -1,7 +1,7 @@
-export function PoolsHeader() {
+export function PoolsHeader({ isWarningVisible }) {
   //
   return (
-    <div className="ibrahim-pool-head debug">
+    <div style={isWarningVisible ? {marginTop: '130px'} : {marginTop: '55px'}} className="ibrahim-pool-head debug">
       <div className="ibrahim-pool-head-text1">Syrup Pools</div>
       <div className="ibrahim-pool-head-text2">
         Just stake some tokens to earn.
