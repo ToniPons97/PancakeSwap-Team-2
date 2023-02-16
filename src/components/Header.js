@@ -10,20 +10,21 @@ import headerTrades from '../assets/icons/header-trades.svg';
 import headerStaked from '../assets/icons/header-staked.svg';
 import HeaderSwipper from './HeaderSwipper';
 
+import { useNavigate } from 'react-router-dom';
+
+
 const Header = () => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/swap');
+        window.scrollTo(0, 0);
+    }
+
     return (
         <div className="ibrahim-full-background">
             <div className="headMiddleBackgroundColor">
                 <div className="ibrahim-head">
-
-
-
                     <HeaderSwipper />
-
-
-
-
-
                 </div>
                 <div className="ibrahim-middle">
                     <div className="ibrahim-middle-left">
@@ -31,7 +32,7 @@ const Header = () => {
                         <h6 className="ibrahim-margin header-middle-tag" id="middleH6Tag">Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.</h6>
                         <div className="ibrahim-margin">
                             <button className="header-middle-button" id="buttonRightMargin"><b>Connect Wallet</b></button>
-                            <button className="header-middle-button" id="buttonSecondMiddle"><b>Trade Now</b></button>
+                            <button onClick={handleClick} className="header-middle-button" id="buttonSecondMiddle"><b>Trade Now</b></button>
                         </div>
                     </div>
                     <div className="ibrahim-middle-right">
