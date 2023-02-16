@@ -15,6 +15,7 @@ import bottomRight from '../assets/images/cards-images/bottom-right@2x.webp';
 import topRightCard from '../assets/images/cards-images/top-right@2x.webp';
 import coin from '../assets/images/cards-images/coin@2x.webp';
 import topLeft from '../assets/images/cards-images/top-left@2x.webp';
+import GoToSwapButton from './GoToSwapButton';
 
 const Infos = () => {
     return (
@@ -127,7 +128,7 @@ const Infos = () => {
                     <h2 className="cards-h2"> <span className="blue-text">CAKE</span> makes our world go round.</h2>
                     <p>Trade any token on BNB Smart Chain in seconds, just by connecting your wallet.</p>
                     <div className="cards-links">
-                    <button className="trade">Buy Cake</button>
+                    <GoToSwapButton btnText='Buy CAKE' />
                     <a className="learn-link" href="#">Learn</a>
                     </div>
                 </div>

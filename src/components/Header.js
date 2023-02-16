@@ -10,15 +10,11 @@ import headerTrades from '../assets/icons/header-trades.svg';
 import headerStaked from '../assets/icons/header-staked.svg';
 import HeaderSwipper from './HeaderSwipper';
 
-import { useNavigate } from 'react-router-dom';
+import GoToSwapButton from './GoToSwapButton';
 
 
 const Header = () => {
-    const navigate = useNavigate();
-    const handleClick = () => {
-        navigate('/swap');
-        window.scrollTo(0, 0);
-    }
+
 
     return (
         <div className="ibrahim-full-background">
@@ -32,7 +28,7 @@ const Header = () => {
                         <h6 className="ibrahim-margin header-middle-tag" id="middleH6Tag">Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.</h6>
                         <div className="ibrahim-margin">
                             <button className="header-middle-button" id="buttonRightMargin"><b>Connect Wallet</b></button>
-                            <button onClick={handleClick} className="header-middle-button" id="buttonSecondMiddle"><b>Trade Now</b></button>
+                            <GoToSwapButton classes="header-middle-button buttonSecondMiddle" btnText='Trade now' />
                         </div>
                     </div>
                     <div className="ibrahim-middle-right">
@@ -52,7 +48,6 @@ const Header = () => {
                 <div className="alignmentVerHor">
                     <img id="ps-logo-icon" src={psLogo} alt="" />
                 </div>
-
                 <div className="alignmentVerHor millionBillion">Used by millions.</div>
                 <div className="alignmentVerHor millionBillion">Trusted with billions.</div>
                 <div className="footTexts">
