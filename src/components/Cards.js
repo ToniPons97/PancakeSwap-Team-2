@@ -5,6 +5,7 @@ import cake from '../assets/images/cards-images/CAKE@2x.webp';
 import stonks from '../assets/images/cards-images/stonks@2x.webp';
 import pie from '../assets/images/cards-images/pie@2x.webp';
 import folder from '../assets/images/cards-images/folder@2x.webp';
+import GoToSwapButton from './GoToSwapButton';
 
 
 const Cards = () => {
@@ -15,7 +16,7 @@ const Cards = () => {
                 <h2 className="cards-h2"> <span className="blue-text">Trade</span> anything. No registration, no hassle.</h2>
                 <p>Trade any token on BNB Smart Chain in seconds, just by connecting your wallet.</p>
                 <div className="cards-links">
-                    <button className="trade">Trade Now</button>
+                    <GoToSwapButton btnText='Trade Now'/>
                     <a className="learn-link" href="#">Learn</a>
                 </div>
                 </div>
