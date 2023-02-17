@@ -93,7 +93,7 @@
     background-color: var(--navbar-bg-color);
     height: f.rem(56);
     border-bottom: 1px solid #E7E3EB;
-    transition: ease-in 0.2s;
+    transition: top ease-in 0.2s;
 
     .nav-left {
         display: flex;
@@ -126,9 +126,7 @@
                 position: relative;
             }
 
-            li.logo {
-                padding: 0;
-                font-size: 100%;
+            li.logo {                
                 margin-right: 30px;
                 margin-left: 10px;
             }
@@ -477,3 +475,42 @@
 .top-right-icons {
     fill: var(--world-img);
 }
+
+@media only screen and (max-width: 1050px) {
+    .nav-right {
+        .top-right-icons {
+            position: relative;
+            left: 75px;
+        }
+
+        .currency {
+            display: none;
+        }
+    }
+
+    #select-network {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 56%;
+        position: relative;
+        float: right;
+        p {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 30%;
+            max-height: 40%;
+        }
+    }
+
+    li.logo {
+        img {
+            position: absolute;
+            top: 8px;
+            clip-path: circle(28px at 0 15px);
+        }
+    }
+}
+
