@@ -1,0 +1,103 @@
+@use '../variables.scss' as vars;
+
+
+/* INFOS 1 */
+#infos-1 {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    background-color: vars.$infos-1-bg-color;
+    z-index: 3;
+  }
+  
+  #infos-1 {
+    h2 {
+    display: inline;
+    margin-left: 0.8em;
+    font-size: 1.2em;
+    }
+  }
+  
+  #infos-1 {
+    button {
+      appearance: none;
+      border: none;
+      background-color: vars.$infos-1-bg-color;
+    }
+  }
+  
+  #up-down-arrow {
+  fill: vars.$up-down-color;
+  background-color: vars.$infos-1-bg-color;
+  width: 24px;
+  height: 24px;
+  }
+  
+  #up-down-arrow:hover {
+  fill: vars.$up-down-hover-color;
+  transition: 0.2s;
+  cursor: pointer;
+  }
+  
+  #category {
+    color: #7645d9;
+  }
+  
+  #infos-1-title-container {
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  #trade-data-container {
+    margin-top: 1em;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: 1fr;
+    margin-bottom: 100px;
+  
+  }
+  
+  .data-box {
+      h3 {
+      color: vars.$data-box-h3-color;
+      font-size: 0.7rem;
+      margin-bottom: 1em;
+    }
+  }
+  
+  .data-box {
+    p {
+      color: vars.$data-box-p-color;
+      margin-top: 0.3em;
+    }
+  }
+  
+  .data-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-left: 1px solid rgb(207, 193, 235);
+    padding-left: 0.9em;
+    height: 70px;
+  }
+  
+  .data-box:first-child {
+    border: none;
+  }
+  
+  #percentage {
+  font-weight: bold;
+  color: black;
+  }
+  
+  @media(max-width: 550px) {
+  .data-box {
+    border: none;
+  }
+  }
