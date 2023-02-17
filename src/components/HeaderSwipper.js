@@ -7,7 +7,6 @@ import lottery from '../assets/images/header-images/lottery.webp';
 import perpetual from '../assets/images/header-images/perpetual.webp';
 import SwipperCounter from './SwipperCounter';
 import { useEffect, useRef, useState } from 'react';
-import { useCountdown } from './Hooks/useCountdown';
 
 const HeaderSwipper = () => {
     const [ currentBulletIndex, setCurrentBulletIndex ] = useState(0);
