@@ -13,16 +13,13 @@ const HeaderSwipper = () => {
     const [ currentBulletIndex, setCurrentBulletIndex ] = useState(0);
     const bulletsContainerRef = useRef(null);
     const headerContainerRef = useRef(null);
+    const intervalIdRef = useRef();
 
     const customImgStyles = [
         {top: '-36px', right: '0px', }, 
         {width: '1105px', height: '222px', top: '-24px', right: '-6px'},
         {width: '392px', height: '236px', top: '-41px', right: '0px'}
     ];
-
-
-    //Temporary hook here
-    //const {countdown} = useCountdown({days: 1, hours: 19, minutes: 34, seconds: 4});
 
     const sliderElements = [
         {
@@ -60,6 +57,8 @@ const HeaderSwipper = () => {
         const clickedBulletIndex = bulletsArr.indexOf(clickedBullet);
         unselectPrevBullet(clickedBullet, clickedBulletIndex, bulletsArr);
         toggleBackground();
+        clearInterval(intervalIdRef.current);
+        intervalIdRef.current = startInterval();
     }
 
     const unselectPrevBullet = (clickedBullet, clickedBulletIndex, bulletsArr) => {
@@ -92,13 +91,17 @@ const HeaderSwipper = () => {
 
     }
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
+    const startInterval = () => {
+        return setInterval(() => {
             setCurrentBulletIndex(prevIndex => (prevIndex + 1) % 3);
         }, 5000);
+    }
+
+    useEffect(() => {
+        intervalIdRef.current = startInterval();
 
         return () => {
-            clearInterval(intervalId);
+            clearInterval(intervalIdRef.current);
         }
     }, []);
 

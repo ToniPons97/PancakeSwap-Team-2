@@ -16,63 +16,16 @@ import topRightCard from '../assets/images/cards-images/top-right@2x.webp';
 import coin from '../assets/images/cards-images/coin@2x.webp';
 import topLeft from '../assets/images/cards-images/top-left@2x.webp';
 import GoToSwapButton from './GoToSwapButton';
+import Infos1 from './Infos1';
 
 const Infos = () => {
     return (
         <>
-            <section id="infos-1">
-                <div>
-                    <div id="infos-1-title-container">
-                        <h2>Top 
-                        <span id="category">Farms</span>
-                    </h2>
-                        <button id="up-down-button">
-                            <svg id="up-down-arrow" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 17.01V11C16 10.45 15.55 10 15 10C14.45 10 14 10.45 14 11V17.01H12.21C11.76 
-                                17.01 11.54 17.55 11.86 17.86L14.65 20.64C14.85 20.83 15.16 20.83 
-                                15.36 20.64L18.15 17.86C18.47 17.55 18.24 17.01 17.8 17.01H16ZM8.65003 
-                                3.35002L5.86003 6.14002C5.54003 6.45002 5.76003 6.99002 6.21003 
-                                6.99002H8.00003V13C8.00003 13.55 8.45003 14 9.00003 14C9.55003 14 10 13.55 10 
-                                13V6.99002H11.79C12.24 6.99002 12.46 6.45002 12.14 6.14002L9.35003 
-                                3.35002C9.16003 3.16002 8.84003 3.16002 8.65003 3.35002Z">
-                            </path>
-                            </svg>
-                        </button>
-                    </div>
+            {/* INFOS 1 HERE */}
+            <Infos1 />
 
-                    <div id="trade-data-container">
-                        <div className="data-box">
-                            <h3>MHUNT-BNB LP</h3>
-                            <span id="percentage">321.269%</span>
-                            <p>APR</p>
-                        </div>
-                        
-                        <div className="data-box">
-                            <h3>KRS-BUSD LP</h3>
-                            <span id="percentage">220.422%</span>
-                            <p>APR</p>
-                        </div>
 
-                        <div className="data-box">
-                            <h3>CO-BUSD LP</h3>
-                            <span id="percentage">175.543%</span>
-                            <p>APR</p>
-                        </div>
-                        
-                        <div className="data-box">
-                            <h3>HOOP-BUSD LP</h3>
-                            <span id="percentage">169.051%</span>
-                            <p>APR</p>
-                        </div>
-                        
-                        <div className="data-box">
-                            <h3>WMX-BUSD LP</h3>
-                            <span id="percentage">133.768%</span>
-                            <p>APR</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
         <section id="infos-2">
             <img id="lott-ball-1" className="lott-balls" src={ball2} alt="Lottery ball." />
             <img id="lott-ball-2" className="lott-balls" src={ball7} alt="Lottery ball." />
