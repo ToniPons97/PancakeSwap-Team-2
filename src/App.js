@@ -14,6 +14,7 @@ import { LiquidityHome } from "./components/LiqudityHome";
 import { AddLiquidity } from "./components/AddLiquidity";
 import Graph from "./components/Graph";
 import { useCountdown } from "./components/Hooks/useCountdown";
+import NftCollection from "./components/NftCollection";
 
 function App() {
   // Phishing Warning state.
@@ -37,10 +38,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="home" element={<Homepage />} />
-        <Route path="/pools" element={<Pools isWarningVisible={showWarning} />} />
+        <Route
+          path="/pools"
+          element={<Pools isWarningVisible={showWarning} />}
+        />
         <Route path="*" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
         <Route path="swap" element={<Graph showWarning={showWarning} />} />
+        <Route
+          path="Collections"
+          element={<NftCollection showWarning={showWarning} />}
+        />
         <Route
           path="Liquidity"
           element={<LiquidityHome isWarningVisible={showWarning} />}

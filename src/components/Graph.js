@@ -42,7 +42,7 @@ const Graph = (props) => {
   const handleClick = (event) => {
     setButtonInfo(event.target.innerHTML);
   };
-  // useEffect(() => handleSetCoinValue, []);
+  useEffect(() => handleSetCoinValue, []);
 
   function handleSetCoinValue(data) {
     setCoinValue(data);

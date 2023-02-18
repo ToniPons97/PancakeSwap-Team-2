@@ -54,31 +54,31 @@ export default function ChartComponent(props) {
   const [cakeValues, setCakeValues] = useState([]);
 
   // Fetch datafrom the API
-  const fetchCoins = () => {
-    const bnbURL =
-      "https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BNB&market=USD&apikey=BFC9IEBEYDTDVGJN";
-    const cakeURL =
-      "https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=CAKE&market=USD&apikey=BFC9IEBEYDTDVGJN";
-
-    const getBnb = axios.get(bnbURL);
-    const getCake = axios.get(cakeURL);
-
-    axios.all([getBnb, getCake]).then(
-      axios.spread((...allData) => {
-        const bnbData = allData[0];
-        const cakeData = allData[1];
-
-        setChart(
-          Object.keys(bnbData?.data["Time Series (Digital Currency Daily)"])
-        );
-
-        setBnbValues(bnbData?.data["Time Series (Digital Currency Daily)"]);
-        setCakeValues(cakeData?.data["Time Series (Digital Currency Daily)"]);
-      })
-    );
-  };
 
   useEffect(() => {
+    const fetchCoins = () => {
+      const bnbURL =
+        "https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BNB&market=USD&apikey=BFC9IEBEYDTDVGJN";
+      const cakeURL =
+        "https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=CAKE&market=USD&apikey=BFC9IEBEYDTDVGJN";
+
+      const getBnb = axios.get(bnbURL);
+      const getCake = axios.get(cakeURL);
+
+      axios.all([getBnb, getCake]).then(
+        axios.spread((...allData) => {
+          const bnbData = allData[0];
+          const cakeData = allData[1];
+
+          setChart(
+            Object.keys(bnbData?.data["Time Series (Digital Currency Daily)"])
+          );
+
+          setBnbValues(bnbData?.data["Time Series (Digital Currency Daily)"]);
+          setCakeValues(cakeData?.data["Time Series (Digital Currency Daily)"]);
+        })
+      );
+    };
     fetchCoins();
   }, []);
 
