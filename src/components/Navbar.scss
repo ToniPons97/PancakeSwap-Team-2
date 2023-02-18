@@ -95,6 +95,7 @@
     border-bottom: 1px solid #E7E3EB;
     transition: top ease-in 0.2s;
 
+
     .nav-left {
         display: flex;
         justify-content: center;
@@ -129,6 +130,8 @@
             li.logo {                
                 margin-right: 30px;
                 margin-left: 10px;
+                z-index: 6;
+
             }
 
             .item:hover  {
@@ -335,6 +338,10 @@
     .nav-right {
         background-color: var(--navbar-bg-color);
         height: f.rem(56);
+        min-width: 550px;
+        position: fixed;
+        right: 0px;
+        //flex: 1;
 
         ul {
             &:not(#network-selection, .sublanguage  ul){
@@ -476,11 +483,12 @@
     fill: var(--world-img);
 }
 
+
 @media only screen and (max-width: 1050px) {
     .nav-right {
         .top-right-icons {
             position: relative;
-            left: 75px;
+            left: 55px;
         }
 
         .currency {
@@ -505,6 +513,7 @@
         }
     }
 
+
     li.logo {
         img {
             position: absolute;
@@ -513,4 +522,41 @@
         }
     }
 }
+
+@media only screen and (max-width: 892px) {
+    li.logo {
+        img {
+            position: absolute;
+            top: 8px;
+            clip-path: circle(28px at 0 15px);
+            visibility: visible;
+        }
+    }
+    .nav-left {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .connect  {
+        max-width: 96px;
+
+        button {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+            
+            &:before {
+                display: flex;
+                padding: 10px;
+                flex-direction: row;
+                align-items: center;
+                content: 'Connect';
+            }
+        }
+    }
+}
+
+
 
