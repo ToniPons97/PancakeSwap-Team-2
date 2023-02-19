@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const SubNavbar = ({isWarningVisible}) => {
-    const route = window.location.pathname;
+    const route = window.location.pathname.toLowerCase();
     return(
         <div 
             style={isWarningVisible ? 
@@ -13,7 +13,7 @@ const SubNavbar = ({isWarningVisible}) => {
             <div className="main-nav">
             </div>
             <div className="trade-nav">
-                <Link className={route === '/Swap' ? 'selected' : ''} to ="/swap">
+                <Link className={route === '/swap' ? 'selected' : ''} to ="/swap">
                     Swap
                     <div />
                 </Link>
@@ -23,7 +23,7 @@ const SubNavbar = ({isWarningVisible}) => {
                     <div />
                 </Link>
 
-                <Link className={route === '/Liquidity' ? 'selected' : ''} to ="/Liquidity">
+                <Link className={route === '/liquidity' ? 'selected' : ''} to ="/Liquidity">
                     Liquidity
                     <div />
                 </Link>
