@@ -14,6 +14,7 @@ import { LiquidityHome } from "./components/LiqudityHome";
 import { AddLiquidity } from "./components/AddLiquidity";
 import Graph from "./components/Graph";
 import { useCountdown } from "./components/Hooks/useCountdown";
+import Teams from "./components/Teams";
 
 function App() {
   // Phishing Warning state.
@@ -48,6 +49,10 @@ function App() {
         <Route
           path="add"
           element={<AddLiquidity isWarningVisible={showWarning} />}
+        />
+        <Route
+          path='teams'
+          element={<Teams />}
         />
       </Routes>
       <Footer />

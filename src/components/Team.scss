@@ -1,0 +1,111 @@
+.team {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid #E7E3EB;
+    height: 180px;
+    border-radius: 20px;
+    gap: 2rem;
+    background-color: #FFFFFF;
+
+    .team-index {
+        border-bottom-left-radius: 19px;
+        border-top-left-radius: 19px;
+        width: 55px;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        background-image: linear-gradient(#E8FBFC, 30%, #F2F0FD);
+    }
+
+    .team-content {
+        // border: 1px solid ;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-self: center;
+        flex: 1;
+
+        p {
+            color: #7a6eaa;
+            font-weight: bolder;
+            font-size: 15px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 0.4rem;
+
+                p {
+                    position: relative;
+                    top: 2px;
+                    font-weight: bold;
+                    font-size: 22px;
+                }
+
+                &:first-child {
+                    p {
+                        color: #bdc2c4;
+                    }
+                }
+                
+                &:last-child {
+                    p {
+                        color: #280d5f;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .team-extra {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 300px;
+        //border: 1px solid blue;
+
+        button {
+            height: 32px;
+            width: 106px;
+            appearance: none;
+            border: 2px solid #1fc7d4;
+            color: #1fc7d4;
+            font-weight: bold;
+            font-size: 15px;
+            background-color: #FAF9FA;
+            border-radius: 16px;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.6;
+                transition: opacity 0.3s;
+            }
+
+
+
+        }
+
+        div {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-image: url('../assets/images/teams-images/syrup-storm-md.png');
+
+
+        }
+    }
+}
