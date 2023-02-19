@@ -7,9 +7,10 @@ import NavbarItem from './NavbarItem';
 import { Link } from 'react-router-dom';
 import Currency from './Currency';
 import NetworkSelector from './NetworkSelector';
+import logoSmall from '../Full Logo/bunny-color.svg';
 
 
-const Navbar = ({isWarningVisible}) => {
+const Navbar = ({ isWarningVisible }) => {
     const scrollDirection = useScrollDirection();
     
     return (
@@ -19,7 +20,11 @@ const Navbar = ({isWarningVisible}) => {
         >
             <section className="nav-left">
                 <ul>
-                    <li className="logo"><Link to='/'><img src={logoDark} alt="" /></Link></li>
+                    <li className="logo">
+                        <Link to='/'>
+                            <img id='navbar-logo1' src={logoDark} alt="" />                             
+                        </Link>
+                    </li>
                     <div className="item-wrapper">
 
                         <NavbarItem 

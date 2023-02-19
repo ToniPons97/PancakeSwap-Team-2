@@ -93,7 +93,8 @@
     background-color: var(--navbar-bg-color);
     height: f.rem(56);
     border-bottom: 1px solid #E7E3EB;
-    transition: ease-in 0.2s;
+    transition: top ease-in 0.2s;
+
 
     .nav-left {
         display: flex;
@@ -126,11 +127,11 @@
                 position: relative;
             }
 
-            li.logo {
-                padding: 0;
-                font-size: 100%;
+            li.logo {                
                 margin-right: 30px;
                 margin-left: 10px;
+                z-index: 6;
+
             }
 
             .item:hover  {
@@ -337,10 +338,15 @@
     .nav-right {
         background-color: var(--navbar-bg-color);
         height: f.rem(56);
+        min-width: 550px;
+        position: fixed;
+        right: 0px;
+        //flex: 1;
 
         ul {
             &:not(#network-selection, .sublanguage  ul){
                 display: flex;
+                gap: 1rem;
                 flex-direction: row;
                 justify-content: flex-end;
                 align-items: center;
@@ -477,3 +483,137 @@
 .top-right-icons {
     fill: var(--world-img);
 }
+
+
+@media only screen and (max-width: 1100px) and (min-width: 892px) {
+    .nav-right {
+        .top-right-icons {
+            position: relative;
+            left: 55px;
+        }
+
+        .currency {
+            display: none;
+        }
+    }
+
+    #select-network {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 56%;
+        position: relative;
+        float: right;
+        p {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 30%;
+            max-height: 40%;
+        }
+    }
+
+
+    li.logo {
+        img {
+            position: absolute;
+            top: 8px;
+            clip-path: circle(28px at 0 15px);
+        }
+    }
+}
+
+@media only screen and (max-width: 892px) {
+    li.logo {
+        img {
+            position: absolute;
+            top: 8px;
+            clip-path: circle(28px at 0 15px);
+            visibility: visible;
+        }
+    }
+    .nav-left {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .connect  {
+        max-width: 96px;
+
+        button {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+            
+            &:before {
+                display: flex;
+                padding: 10px;
+                flex-direction: row;
+                align-items: center;
+                content: 'Connect';
+            }
+        }
+    }
+
+    #select-network {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 56%;
+        position: relative;
+        float: right;
+        p {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 30%;
+            max-height: 40%;
+        }
+    }
+
+    .currency {
+        display: none;
+    }
+
+    .nav-right {
+        .top-right-icons {
+            position: relative;
+            left: 73px;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #select-network {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+
+        p {
+            display: none;
+        }
+
+        svg {
+            position: relative;
+            left: 3px;
+        }
+    }
+
+    .nav-right {
+        .top-right-icons {
+            position: relative;
+            left: 25px;
+            // left: unset !important;
+            // right: unset !important;
+        }
+    }
+}
+
+
+
