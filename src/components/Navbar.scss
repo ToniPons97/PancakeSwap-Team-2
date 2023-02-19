@@ -346,6 +346,7 @@
         ul {
             &:not(#network-selection, .sublanguage  ul){
                 display: flex;
+                gap: 1rem;
                 flex-direction: row;
                 justify-content: flex-end;
                 align-items: center;
@@ -484,7 +485,7 @@
 }
 
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1100px) and (min-width: 892px) {
     .nav-right {
         .top-right-icons {
             position: relative;
@@ -554,6 +555,62 @@
                 align-items: center;
                 content: 'Connect';
             }
+        }
+    }
+
+    #select-network {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 56%;
+        position: relative;
+        float: right;
+        p {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 30%;
+            max-height: 40%;
+        }
+    }
+
+    .currency {
+        display: none;
+    }
+
+    .nav-right {
+        .top-right-icons {
+            position: relative;
+            left: 73px;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #select-network {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+
+        p {
+            display: none;
+        }
+
+        svg {
+            position: relative;
+            left: 3px;
+        }
+    }
+
+    .nav-right {
+        .top-right-icons {
+            position: relative;
+            left: 25px;
+            // left: unset !important;
+            // right: unset !important;
         }
     }
 }

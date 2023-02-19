@@ -13,7 +13,7 @@ const SubNavbar = ({isWarningVisible}) => {
             <div className="main-nav">
             </div>
             <div className="trade-nav">
-                <Link className={route === '/swap' ? 'selected' : ''} to ="/swap">
+                <Link className={route === '/Swap' ? 'selected' : ''} to ="/swap">
                     Swap
                     <div />
                 </Link>
