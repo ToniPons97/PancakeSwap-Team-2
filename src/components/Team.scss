@@ -86,7 +86,7 @@
             color: #1fc7d4;
             font-weight: bold;
             font-size: 15px;
-            background-color: #FAF9FA;
+            background-color: transparent;
             border-radius: 16px;
 
             &:hover {
@@ -99,11 +99,11 @@
 
         }
 
-        div {
+        img {
             width: 130px;
             height: 130px;
             border-radius: 50%;
-            background-image: url('../assets/images/teams-images/syrup-storm-md.png');
+            background-image: url();
 
 
         }

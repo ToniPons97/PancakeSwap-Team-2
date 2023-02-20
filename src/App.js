@@ -50,10 +50,9 @@ function App() {
           path="add"
           element={<AddLiquidity isWarningVisible={showWarning} />}
         />
-        <Route
-          path='teams'
-          element={<Teams />}
-        />
+        <Route path='teams' element={<Teams />}>
+          <Route path=':id' element={<Teams />} />
+        </Route>
       </Routes>
       <Footer />
       <Fab isFabVisible={fabVisible} />

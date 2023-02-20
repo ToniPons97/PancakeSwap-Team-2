@@ -79,7 +79,7 @@ const Navbar = ({ isWarningVisible }) => {
                                         <div id="nav-submenu-msg">VOTE NOW</div>
                                     </li>
                                     <li>
-                                        <a href="#">Leaderboard</a>
+                                        <Link to="teams">Leaderboard</Link>
                                     </li>
                                     <li>
                                         <a href="#">Blog</a>
