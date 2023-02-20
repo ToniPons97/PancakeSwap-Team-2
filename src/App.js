@@ -15,6 +15,7 @@ import { AddLiquidity } from "./components/AddLiquidity";
 import Graph from "./components/Graph";
 import { useCountdown } from "./components/Hooks/useCountdown";
 import NftCollection from "./components/NftCollection";
+import NftDetails from "./components/NftDetails";
 
 function App() {
   // Phishing Warning state.
@@ -48,6 +49,10 @@ function App() {
         <Route
           path="Collections"
           element={<NftCollection showWarning={showWarning} />}
+        />
+        <Route
+          path="Collections/:id"
+          element={<NftDetails showWarning={showWarning} />}
         />
         <Route
           path="Liquidity"

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import bnbLogo from "../assets/icons/binance-coin-bnb-icon.svg";
 import "./nft.scss";
 const apiPath = "http://localhost:5000/api";
@@ -17,33 +18,62 @@ function NftCollection() {
     };
     fetchData();
   }, []);
+
+  const handleSort = (e) => {
+    const value = e.target.value;
+    let newArr = [];
+    if (value === "Volume") {
+      newArr = data.sort((a, b) => b.volume - a.volume);
+      setData(newArr);
+    } else if (value === "Items") {
+      newArr = data.sort((a, b) => b.itemCount - a.itemCount);
+      setData(newArr);
+    } else {
+      newArr = data.sort((a, b) => a.id - b.id);
+      setData(newArr);
+    }
+  };
   return (
-    <div>
-      <div style={{ marginTop: "150px" }}></div>
+    <div className="body">
+      <div className="top-margin" style={{ marginTop: "150px" }}></div>
+      <div className="title">
+        <h1>Collections</h1>
+      </div>
+      <div className="sort">
+        <p>Sort By</p>
+        <select onChange={handleSort} name="sort-nfties" id="">
+          <option value="Collection">Collection</option>
+          <option value="Volume">Volume</option>
+          <option value="Items">Items</option>
+        </select>
+      </div>
       <div className="main">
         {data.map((el) => {
           return (
-            <div className="container" key={el.id}>
-              <img
-                className="banner"
-                src={require("../assets/images/nft-collection-images/" +
-                  el.banner)}
-                alt=""
-              />
-              <img
-                className="avatar"
-                width={"100px"}
-                src={require("../assets/images/nft-collection-images/Avatars/" +
-                  el.avatar)}
-                alt=""
-              />
-              <div className="text">
-                <h2>{el.name}</h2>
-                <p>
-                  Volume <img width={"12px"} src={bnbLogo} alt="" /> {el.volume}
-                </p>
+            <Link to={`/Collections/${el.id}`}>
+              <div className="container" key={el.id}>
+                <img
+                  className="banner"
+                  src={require("../assets/images/nft-collection-images/" +
+                    el.banner)}
+                  alt=""
+                />
+                <img
+                  className="avatar"
+                  width={"100px"}
+                  src={require("../assets/images/nft-collection-images/Avatars/" +
+                    el.avatar)}
+                  alt=""
+                />
+                <div className="text">
+                  <h2>{el.name}</h2>
+                  <p>
+                    Volume <img width={"12px"} src={bnbLogo} alt="" />{" "}
+                    {el.volume}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

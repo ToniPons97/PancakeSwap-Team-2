@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,14 +10,19 @@ import {
   Title,
   Tooltip,
   Legend,
-  registerables,
   Filler,
-  ScriptableContext,
 } from "chart.js";
 import { Bar, Line } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
-export default function ChartComponent(props) {
+export default function ChartComponent({
+  changeExchange,
+  chartStyle,
+  buttonInfo,
+  handleSetCoinValue,
+  chart,
+  getExchange,
+}) {
   const [pointVisible, setPointVisible] = useState(0);
   ChartJS.register(
     CategoryScale,
@@ -44,55 +49,11 @@ export default function ChartComponent(props) {
     },
     listeners: {
       enter: function (context, event) {
-        props.handleSetCoinValue(context.dataset.data[context.dataIndex]);
+        handleSetCoinValue(context.dataset.data[context.dataIndex]);
       },
     },
   });
 
-  const [chart, setChart] = useState([]);
-  const [bnbValues, setBnbValues] = useState([]);
-  const [cakeValues, setCakeValues] = useState([]);
-
-  // Fetch datafrom the API
-
-  useEffect(() => {
-    const fetchCoins = () => {
-      const bnbURL =
-        "https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BNB&market=USD&apikey=BFC9IEBEYDTDVGJN";
-      const cakeURL =
-        "https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=CAKE&market=USD&apikey=BFC9IEBEYDTDVGJN";
-
-      const getBnb = axios.get(bnbURL);
-      const getCake = axios.get(cakeURL);
-
-      axios.all([getBnb, getCake]).then(
-        axios.spread((...allData) => {
-          const bnbData = allData[0];
-          const cakeData = allData[1];
-
-          setChart(
-            Object.keys(bnbData?.data["Time Series (Digital Currency Daily)"])
-          );
-
-          setBnbValues(bnbData?.data["Time Series (Digital Currency Daily)"]);
-          setCakeValues(cakeData?.data["Time Series (Digital Currency Daily)"]);
-        })
-      );
-    };
-    fetchCoins();
-  }, []);
-
-  function getExchange(dateIndex) {
-    return props.changeExchange
-      ? (
-          Number(bnbValues?.[chart[dateIndex]]?.["1a. open (USD)"]) /
-          Number(cakeValues?.[chart[dateIndex]]?.["1a. open (USD)"])
-        ).toFixed(2)
-      : (
-          Number(cakeValues?.[chart[dateIndex]]?.["1a. open (USD)"]) /
-          Number(bnbValues?.[chart[dateIndex]]?.["1a. open (USD)"])
-        ).toFixed(4);
-  }
   const options = {
     hover: {
       intersect: false,
@@ -179,19 +140,18 @@ export default function ChartComponent(props) {
     { time: "10:30 PM", value: "64" },
     { time: "12:30 PM", value: "60" },
   ];
-  props.getLastCoinValue(getExchange(0));
   const yearChart = {
     labels: dataYear.map((label) => label.time),
     datasets: [
       {
         pointBackgroundColor: `rgb(104, 215, 224, 0)`,
-        pointHoverBackgroundColor: props.changeExchange
+        pointHoverBackgroundColor: changeExchange
           ? "rgba(255, 99, 132, 1)"
           : "rgb(104, 215, 224, 1)",
         pointBorderColor: "rgb(104, 215, 224, 0)",
         fill: true,
         data: dataYear.map((data) => data.value),
-        borderColor: props.changeExchange
+        borderColor: changeExchange
           ? "rgba(255, 99, 132, 0.5)"
           : "rgb(104, 215, 224, 0.5)",
         backgroundColor: (context) => {
@@ -199,15 +159,13 @@ export default function ChartComponent(props) {
           const gradient = ctx.createLinearGradient(0, 0, 0, 350);
           gradient.addColorStop(
             0,
-            props.changeExchange
+            changeExchange
               ? "rgba(255, 99, 132, 0.5)"
               : "rgb(104, 215, 224, 0.5)"
           );
           gradient.addColorStop(
             1,
-            props.changeExchange
-              ? "rgba(255, 99, 132, 0)"
-              : "rgb(104, 215, 224, 0)"
+            changeExchange ? "rgba(255, 99, 132, 0)" : "rgb(104, 215, 224, 0)"
           );
           return gradient;
         },
@@ -221,7 +179,7 @@ export default function ChartComponent(props) {
       {
         fill: true,
         data: dataMonth.map((data) => data.value),
-        borderColor: props.changeExchange
+        borderColor: changeExchange
           ? "rgba(255, 99, 132, 0.5)"
           : "rgb(104, 215, 224, 0.5)",
         backgroundColor: (context) => {
@@ -229,15 +187,13 @@ export default function ChartComponent(props) {
           const gradient = ctx.createLinearGradient(0, 0, 0, 350);
           gradient.addColorStop(
             0,
-            props.changeExchange
+            changeExchange
               ? "rgba(255, 99, 132, 0.5)"
               : "rgb(104, 215, 224, 0.5)"
           );
           gradient.addColorStop(
             1,
-            props.changeExchange
-              ? "rgba(255, 99, 132, 0)"
-              : "rgb(104, 215, 224, 0)"
+            changeExchange ? "rgba(255, 99, 132, 0)" : "rgb(104, 215, 224, 0)"
           );
           return gradient;
         },
@@ -250,7 +206,7 @@ export default function ChartComponent(props) {
       {
         fill: true,
         data: dataWeek.map((data) => data.value),
-        borderColor: props.changeExchange
+        borderColor: changeExchange
           ? "rgba(255, 99, 132, 0.5)"
           : "rgb(104, 215, 224, 0.5)",
         backgroundColor: (context) => {
@@ -258,15 +214,13 @@ export default function ChartComponent(props) {
           const gradient = ctx.createLinearGradient(0, 0, 0, 350);
           gradient.addColorStop(
             0,
-            props.changeExchange
+            changeExchange
               ? "rgba(255, 99, 132, 0.5)"
               : "rgb(104, 215, 224, 0.5)"
           );
           gradient.addColorStop(
             1,
-            props.changeExchange
-              ? "rgba(255, 99, 132, 0)"
-              : "rgb(104, 215, 224, 0)"
+            changeExchange ? "rgba(255, 99, 132, 0)" : "rgb(104, 215, 224, 0)"
           );
           return gradient;
         },
@@ -280,7 +234,7 @@ export default function ChartComponent(props) {
       {
         fill: true,
         data: dataDay.map((data) => data.value),
-        borderColor: props.changeExchange
+        borderColor: changeExchange
           ? "rgba(255, 99, 132, 0.5)"
           : "rgb(104, 215, 224, 0.5)",
         backgroundColor: (context) => {
@@ -288,15 +242,13 @@ export default function ChartComponent(props) {
           const gradient = ctx.createLinearGradient(0, 0, 0, 350);
           gradient.addColorStop(
             0,
-            props.changeExchange
+            changeExchange
               ? "rgba(255, 99, 132, 0.5)"
               : "rgb(104, 215, 224, 0.5)"
           );
           gradient.addColorStop(
             1,
-            props.changeExchange
-              ? "rgba(255, 99, 132, 0)"
-              : "rgb(104, 215, 224, 0)"
+            changeExchange ? "rgba(255, 99, 132, 0)" : "rgb(104, 215, 224, 0)"
           );
           return gradient;
         },
@@ -318,17 +270,17 @@ export default function ChartComponent(props) {
 
   return (
     <div>
-      {props.chartStyle === "line" ? (
+      {chartStyle === "line" ? (
         <Line
           id="canvas"
           options={options}
-          data={handleCorrectChart(props.buttonInfo)}
+          data={handleCorrectChart(buttonInfo)}
         />
       ) : (
         <Bar
           id="canvas"
           options={options}
-          data={handleCorrectChart(props.buttonInfo)}
+          data={handleCorrectChart(buttonInfo)}
         />
       )}
     </div>

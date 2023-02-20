@@ -20,6 +20,7 @@ function Calculator({
   changeExchange,
   coinValue,
   lastCoinValue,
+  getExchange,
 }) {
   const [isHover, setIsHover] = useState(false);
   const [coinInputValue, setCoinInputValue] = useState(0);
@@ -109,7 +110,7 @@ function Calculator({
           </button>
           <form action="" method="get" className="second-coin-form">
             <input
-              value={(coinInputValue * lastCoinValue).toFixed(2)}
+              value={(coinInputValue * getExchange(0)).toFixed(2)}
               id="second-coin-input"
               className="inputs"
               type="number"
