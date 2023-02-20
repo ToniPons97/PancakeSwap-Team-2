@@ -3,6 +3,10 @@ import teamSyrupStorm from '../assets/images/teams-images/syrup-storm-md.png';
 import teamFearsomeFlippers from '../assets/images/teams-images/fearsome-flippers-md.png';
 import teamChaoticCakers from '../assets/images/teams-images/chaotic-cakers-md.png';
 
+import syrupStormBg from '../assets/images/teams-images/syrup-storm-bg.svg';
+import fearsomeFlippersBg from '../assets/images/teams-images/fearsome-flippers-bg.svg';
+import chaoticCakersBg from '../assets/images/teams-images/chaotic-cakers-bg.svg'
+
 import { useParams } from 'react-router-dom';
 
 import TeamsList from './TeamsList';
@@ -18,6 +22,7 @@ const Teams = () => {
             description: 'The storm\'s a-comin! Watch out! These bulls are stampeding in a syrupy surge!',
             members: '190,030',
             image: teamSyrupStorm,
+            backgroundImg: syrupStormBg
         },
         {
             id: 2,
@@ -25,6 +30,7 @@ const Teams = () => {
             description: 'The flippening is coming. Don\'t get in these bunnies\' way, or you\'ll get flipped, too!',
             members: '170,518',
             image: teamFearsomeFlippers,
+            backgroundImg: fearsomeFlippersBg
         },
         {
             id: 3,
@@ -32,6 +38,7 @@ const Teams = () => {
             description: 'Can you stand the heat? Stay out of the kitchen or you might get burned to a crisp!',
             members: '343,134',
             image: teamChaoticCakers,
+            backgroundImg: chaoticCakersBg
         },
 
     ];

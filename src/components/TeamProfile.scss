@@ -1,0 +1,84 @@
+.team-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    //border: 1px solid red;
+
+}
+
+.team-profile-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #E7E3EB;
+    width: 1125px;
+    height: 550px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+    .profile-top {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.9rem;
+        //border: 1px solid yellow;
+        width: 100%;
+        //padding: 20px;
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 2;
+            //border: 1px solid orange;
+            position: relative;
+            bottom: 20px;
+        }
+        
+        .team-bg-img {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        
+
+        img:not(.team-bg-img) {
+            width: 128px;
+            border-radius: 50%;
+            border: 2px solid white;
+            position: relative;
+            bottom: 33px;
+            z-index: 3;
+        }
+    }
+
+    .profile-middle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        height: 200px;
+        padding: 20px;
+
+        border: 1px solid yellow;
+        width: 100%;
+        
+        div:not(.team-stats) {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 48%;
+            height: 65%;
+        }
+    }
+}

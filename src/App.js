@@ -33,32 +33,34 @@ function App() {
   useCountdown();
 
   return (
-    <HelmetProvider>
-      <div onScroll={handleFabScrollEvent}>
-        <PhishingWarning phishingWarningState={{ showWarning, setShowWarning }} />
-        <Navbar isWarningVisible={showWarning} />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="home" element={<Homepage />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="swap" element={<Graph showWarning={showWarning} />} />
-          <Route
-            path="Liquidity"
-            element={<LiquidityHome isWarningVisible={showWarning} />}
-          />
-          <Route
-            path="add"
-            element={<AddLiquidity isWarningVisible={showWarning} />}
-          />
-          <Route path='teams' element={<Teams />}>
-            <Route path=':id' element={<Teams />} />
-          </Route>
-        </Routes>
-        <Footer />
-        <Fab isFabVisible={fabVisible} />
-      </div>
-    </HelmetProvider>
+    <>
+      <PhishingWarning phishingWarningState={{ showWarning, setShowWarning }} />
+      <Navbar isWarningVisible={showWarning} />
+      <HelmetProvider>
+        <div onScroll={handleFabScrollEvent}>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="home" element={<Homepage />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="swap" element={<Graph showWarning={showWarning} />} />
+            <Route
+              path="Liquidity"
+              element={<LiquidityHome isWarningVisible={showWarning} />}
+            />
+            <Route
+              path="add"
+              element={<AddLiquidity isWarningVisible={showWarning} />}
+            />
+            <Route path='teams' element={<Teams />}>
+              <Route path=':id' element={<Teams />} />
+            </Route>
+          </Routes>
+          <Footer />
+          <Fab isFabVisible={fabVisible} />
+        </div>
+      </HelmetProvider>
+    </>
   );
 }
 

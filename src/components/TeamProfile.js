@@ -1,35 +1,42 @@
 import './TeamProfile.scss';
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import teamTrophy from '../assets/icons/trophy.svg';
+import teamUser from '../assets/icons/teams-user.svg';
 
 
 const TeamProfile = ({ teamData }) => {
+    const { name, description, image, members, backgroundImg } = teamData[0];
 
-    const { name, description, image, members } = teamData[0];
-
-
-    //console.log(teamData);
     return (
         <div className='team-profile'>
-            <Link to='/teams'>Teams Overview</Link>
+            <Link to='/teams'>&lt; Teams Overview</Link>
             <div className='team-profile-main'>
                 <section className='profile-top'>
+                    <img className='team-bg-img' src={backgroundImg} />
                     <img src={image} alt={`${name} team`} />
-                    <h3>{name}</h3>
-                    <p>{description}</p>
+
+                    <div>
+                        <h3>{name}</h3>
+                        <p>{description}</p>
+                    </div>
                 </section>
-                <section className='profile-bottom'>
-                    <div className='team-stats'>
-                        <div>
-                            <img />
+                <section className='profile-middle'>
+                    <div>
+                        <img src={teamUser} />
+                        <div className='team-stats'>
                             <h4>{members}</h4>
                             <p>Active members</p>
                         </div>
-                        <div>
-                            <img />
+                    </div>
+                    <div>
+                        <img src={teamTrophy} />
+                        <div className='team-stats'>
                             <h4>Coming Soon</h4>
                             <p>TEAM POINTS</p>
                         </div>
                     </div>
+                </section>
+                <section className='profile-bottom'>
                     <div className='team-achievements'>
                         <h4>Team Achievements</h4>
                         <div>
