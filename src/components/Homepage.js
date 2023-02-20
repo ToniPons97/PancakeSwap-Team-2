@@ -2,7 +2,7 @@ import Header from './Header';
 import Cards from './Cards';
 import Infos from './Infos';
 import SignUp from './SignUp';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Homepage = () => {
     return (

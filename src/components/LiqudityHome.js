@@ -6,7 +6,7 @@ import './LiquidHome.scss';
 import { useNavigate } from 'react-router-dom';
 import SubNavbar from './SubNavbar';
 import LiquidityBottom from './LiquidityBottom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export function LiquidityHome({ isWarningVisible }) {
 	const navGate = useNavigate();

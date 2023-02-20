@@ -15,6 +15,7 @@ import { AddLiquidity } from "./components/AddLiquidity";
 import Graph from "./components/Graph";
 import { useCountdown } from "./components/Hooks/useCountdown";
 import Teams from "./components/Teams";
+import { HelmetProvider } from "react-helmet-async";
 
 function App() {
   // Phishing Warning state.
@@ -32,31 +33,32 @@ function App() {
   useCountdown();
 
   return (
-    <div onScroll={handleFabScrollEvent}>
-      <PhishingWarning phishingWarningState={{ showWarning, setShowWarning }} />
-      <Navbar isWarningVisible={showWarning} />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="home" element={<Homepage />} />
-        <Route path="/pools" element={<Pools isWarningVisible={showWarning} />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="swap" element={<Graph showWarning={showWarning} />} />
-        <Route
-          path="Liquidity"
-          element={<LiquidityHome isWarningVisible={showWarning} />}
-        />
-        <Route
-          path="add"
-          element={<AddLiquidity isWarningVisible={showWarning} />}
-        />
-        <Route path='teams' element={<Teams />}>
-          <Route path=':id' element={<Teams />} />
-        </Route>
-      </Routes>
-      <Footer />
-      <Fab isFabVisible={fabVisible} />
-    </div>
+    <HelmetProvider>
+      <div onScroll={handleFabScrollEvent}>
+        <PhishingWarning phishingWarningState={{ showWarning, setShowWarning }} />
+        <Navbar isWarningVisible={showWarning} />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="home" element={<Homepage />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="swap" element={<Graph showWarning={showWarning} />} />
+          <Route
+            path="Liquidity"
+            element={<LiquidityHome isWarningVisible={showWarning} />}
+          />
+          <Route
+            path="add"
+            element={<AddLiquidity isWarningVisible={showWarning} />}
+          />
+          <Route path='teams' element={<Teams />}>
+            <Route path=':id' element={<Teams />} />
+          </Route>
+        </Routes>
+        <Footer />
+        <Fab isFabVisible={fabVisible} />
+      </div>
+    </HelmetProvider>
   );
 }
 

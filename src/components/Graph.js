@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import bnbLogo from "../assets/icons/binance-coin-bnb-icon.svg";
 import cakeLogo from "../assets/icons/pancakeswap-cake-logo.svg";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Graph = (props) => {
   //States

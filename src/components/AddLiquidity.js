@@ -13,7 +13,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
 import LiquidityBottom from './LiquidityBottom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 library.add(faCircleQuestion);
 
