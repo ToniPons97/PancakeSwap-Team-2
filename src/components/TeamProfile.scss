@@ -12,11 +12,11 @@
     align-items: center;
     border: 1px solid #E7E3EB;
     width: 1125px;
-    height: 550px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    height: 570px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     
     .profile-top {
         position: relative;
@@ -45,8 +45,8 @@
             top: 0px;
             width: 100%;
             z-index: 1;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
         }
         
 
@@ -75,10 +75,46 @@
         div:not(.team-stats) {
             display: flex;
             flex-direction: row;
-            border: 1px solid black;
-            border-radius: 20px;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+            border: 2px solid #EFF4F5;
+            border-radius: 15px;
             width: 48%;
             height: 65%;
+            padding: 20px;
+
+            &:nth-child(2) {
+                h4, p {
+                    color: #BDC2C4;
+                }
+
+            }
+            
+            
+            .team-stats {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 0.2rem;
+                
+                h4 {
+                    font-size: 30px;
+                }
+                
+                p {
+                    font-size: 10.5px;
+                    font-weight: bold;
+                    margin-left: 5px;
+                }
+
+            }
+            
+
+            img {
+                width: 44px;
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ const TeamProfile = ({ teamData }) => {
                         <img src={teamUser} />
                         <div className='team-stats'>
                             <h4>{members}</h4>
-                            <p>Active members</p>
+                            <p>ACTIVE MEMBERS</p>
                         </div>
                     </div>
                     <div>
