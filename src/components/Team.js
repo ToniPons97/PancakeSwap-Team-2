@@ -27,7 +27,7 @@ const Team = ({ index, name, description, members, image }) => {
                     </li>
                     <li>
                         <img src={teamUser} alt='' />
-                        <p>{members}</p>
+                        <p>{members.toLocaleString('en-US')}</p>
                     </li>
                 </ul>
             </div>
