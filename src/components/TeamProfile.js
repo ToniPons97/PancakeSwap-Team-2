@@ -1,5 +1,5 @@
 import './TeamProfile.scss';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import teamTrophy from '../assets/icons/trophy.svg';
 import teamUser from '../assets/icons/teams-user.svg';
 import teamComingSoon from '../assets/icons/team-coming-soon.svg';
@@ -43,7 +43,7 @@ const TeamProfile = ({ teamData }) => {
                     </div>
                     <div>
                         <img src={teamTrophy} />
-                        <div className='team-stats'>
+                        <div id='disabled-stat' className='team-stats'>
                             <h4>Coming Soon</h4>
                             <p>TEAM POINTS</p>
                         </div>

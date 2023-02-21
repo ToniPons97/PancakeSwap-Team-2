@@ -20,7 +20,7 @@ const Teams = () => {
             id: 1,
             name: 'Syrup Storm',
             description: 'The storm\'s a-comin! Watch out! These bulls are stampeding in a syrupy surge!',
-            members: '190,030',
+            members: 190030,
             image: teamSyrupStorm,
             backgroundImg: syrupStormBg
         },
@@ -28,7 +28,7 @@ const Teams = () => {
             id: 2,
             name: 'Fearsome Flippers',
             description: 'The flippening is coming. Don\'t get in these bunnies\' way, or you\'ll get flipped, too!',
-            members: '170,518',
+            members: 170518,
             image: teamFearsomeFlippers,
             backgroundImg: fearsomeFlippersBg
         },
@@ -36,7 +36,7 @@ const Teams = () => {
             id: 3,
             name: 'Chaotic Cakers',
             description: 'Can you stand the heat? Stay out of the kitchen or you might get burned to a crisp!',
-            members: '343,134',
+            members: 343134,
             image: teamChaoticCakers,
             backgroundImg: chaoticCakersBg
         },

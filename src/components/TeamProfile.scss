@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    //border: 1px solid red;
-
 }
 
 .team-nav {
@@ -40,9 +38,13 @@
         justify-content: center;
         align-items: center;
         gap: 0.9rem;
-        //border: 1px solid yellow;
         width: 100%;
-        //padding: 20px;
+
+        div {
+            h3, p {
+                color: #191326;
+            }
+        }
         
         div {
             display: flex;
@@ -50,7 +52,6 @@
             align-items: center;
             gap: 0.5rem;
             z-index: 2;
-            //border: 1px solid orange;
             position: relative;
             bottom: 20px;
         }
@@ -83,8 +84,7 @@
         gap: 1.5rem;
         height: 240px;
         padding-top: 40px;
-
-        //border: 1px solid yellow;
+        background-color: #fff;
         width: 100%;
         
         div:not(.team-stats) {
@@ -98,15 +98,11 @@
             width: 47%;
             height: 90%;
             padding: 20px;
-            //margin-top: 20px;
-
-            //border: 1px solid red;
-
-            &:nth-child(2) {
+            
+            #disabled-stat {                
                 h4, p {
                     color: #BDC2C4;
                 }
-
             }
             
             
@@ -117,14 +113,17 @@
                 align-items: flex-start;
                 gap: 0.2rem;
                 
+
                 h4 {
-                    font-size: 30px;
+                    color: #280D5F;
+                    font-size: 40px;
                 }
                 
                 p {
                     font-size: 10.5px;
                     font-weight: bold;
                     margin-left: 5px;
+                    color: #7A6EAA;
                 }
 
             }
@@ -143,19 +142,16 @@
         align-content: center;
         width: 100%;
         height: 340px;
-        //border: 1px solid green;
-
         padding: 0 30px;
+        background-color: #fff;
 
         h4 {
-            //position: relative;
-            //bottom: 10px;
             align-self: flex-start;
             justify-self: flex-start;
+            margin-bottom: 20px;
+            color: #280D5F;
+            font-size: 20px;
         }
-
-
-
 
         .team-achievements {
             div {
@@ -164,7 +160,7 @@
                 justify-content: center;
                 align-items: center;
                 gap: 0.2rem;
-                //border: 1px solid orange;
+                margin-top: 20px;
 
                 p {
                     color: #BDC2C4;
@@ -172,8 +168,5 @@
 
             }
         }
-
-
-        
     }
 }

@@ -21,7 +21,6 @@
     }
 
     .team-content {
-        // border: 1px solid ;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -77,7 +76,6 @@
         justify-content: space-around;
         align-items: center;
         width: 300px;
-        //border: 1px solid blue;
 
         button {
             height: 32px;
@@ -104,9 +102,6 @@
             width: 130px;
             height: 130px;
             border-radius: 50%;
-            //background-image: url();
-
-
         }
     }
 }
