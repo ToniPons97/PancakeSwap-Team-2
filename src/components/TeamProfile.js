@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import teamTrophy from '../assets/icons/trophy.svg';
 import teamUser from '../assets/icons/teams-user.svg';
 import teamComingSoon from '../assets/icons/team-coming-soon.svg';
+import teamGoBack from '../assets/icons/teams-go-back.svg';
+
 import { useEffect } from 'react';
 
 
@@ -15,7 +17,12 @@ const TeamProfile = ({ teamData }) => {
 
     return (
         <div className='team-profile'>
-            <Link to='/teams'>&lt; Teams Overview</Link>
+            <div className='team-nav'>
+                <img src={teamGoBack} alt='Go back' />
+                <Link to='/teams'>
+                    Teams Overview
+                </Link>
+            </div>
             <div className='team-profile-main'>
                 <section className='profile-top'>
                     <img className='team-bg-img' src={backgroundImg} />
