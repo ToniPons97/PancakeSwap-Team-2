@@ -1,7 +1,7 @@
 .team-profile {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     //border: 1px solid red;
 
 }
@@ -66,10 +66,10 @@
         justify-content: center;
         align-items: center;
         gap: 1.5rem;
-        height: 200px;
-        padding: 20px;
+        height: 240px;
+        padding-top: 40px;
 
-        border: 1px solid yellow;
+        //border: 1px solid yellow;
         width: 100%;
         
         div:not(.team-stats) {
@@ -77,12 +77,15 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            gap: 1rem;
+            gap: 1.2rem;
             border: 2px solid #EFF4F5;
             border-radius: 15px;
-            width: 48%;
-            height: 65%;
+            width: 47%;
+            height: 90%;
             padding: 20px;
+            //margin-top: 20px;
+
+            //border: 1px solid red;
 
             &:nth-child(2) {
                 h4, p {
@@ -116,5 +119,46 @@
                 width: 44px;
             }
         }
+    }
+
+    .profile-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 340px;
+        //border: 1px solid green;
+
+        padding: 0 30px;
+
+        h4 {
+            //position: relative;
+            //bottom: 10px;
+            align-self: flex-start;
+            justify-self: flex-start;
+        }
+
+
+
+
+        .team-achievements {
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0.2rem;
+                //border: 1px solid orange;
+
+                p {
+                    color: #BDC2C4;
+                }
+
+            }
+        }
+
+
+        
     }
 }

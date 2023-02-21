@@ -2,10 +2,16 @@ import './TeamProfile.scss';
 import { Link, useNavigate } from "react-router-dom";
 import teamTrophy from '../assets/icons/trophy.svg';
 import teamUser from '../assets/icons/teams-user.svg';
+import teamComingSoon from '../assets/icons/team-coming-soon.svg';
+import { useEffect } from 'react';
 
 
 const TeamProfile = ({ teamData }) => {
     const { name, description, image, members, backgroundImg } = teamData[0];
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className='team-profile'>
@@ -37,12 +43,12 @@ const TeamProfile = ({ teamData }) => {
                     </div>
                 </section>
                 <section className='profile-bottom'>
+                    <h4>Team Achievements</h4>
                     <div className='team-achievements'>
-                        <h4>Team Achievements</h4>
                         <div>
-                            <img alt='Coming soon' />
+                            <img src={teamComingSoon} alt='Coming soon' />
+                            <p>Coming Soon!</p>
                         </div>
-                        <p>Coming Soon!</p>
                     </div>
                 </section>
             </div>
