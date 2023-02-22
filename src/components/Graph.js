@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import "./swap.css";
 import ChartComponent from "./ChartComponent";
 import { useState, useEffect } from "react";
@@ -21,7 +22,6 @@ const Graph = (props) => {
   const [buttonInfo, setButtonInfo] = useState("1y");
   const [chartStyle, setChartStyle] = useState("line");
   const [coinValue, setCoinValue] = useState("64");
-  const [lastCoinValue, setLastCoinValue] = useState(0);
   const [chartColor, setChartColor] = useState(false);
 
   const [changeExchange, setChangeExchange] = useState(false);
@@ -30,11 +30,52 @@ const Graph = (props) => {
   const turq = "rgb(104, 215, 224)";
   const pinkish = "rgba(255, 99, 132)";
 
+  const [chart, setChart] = useState([]);
+  const [bnbValues, setBnbValues] = useState([]);
+  const [cakeValues, setCakeValues] = useState([]);
+
+  // Fetch datafrom the API
+
+  useEffect(() => {
+    const fetchCoins = () => {
+      const bnbURL =
+        "https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BNB&market=USD&apikey=BFC9IEBEYDTDVGJN";
+      const cakeURL =
+        "https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=ETH&market=USD&apikey=BFC9IEBEYDTDVGJN";
+
+      const getBnb = axios.get(bnbURL);
+      const getCake = axios.get(cakeURL);
+
+      axios.all([getBnb, getCake]).then(
+        axios.spread((...allData) => {
+          const bnbData = allData[0];
+          const cakeData = allData[1];
+
+          setChart(
+            Object.keys(bnbData?.data["Time Series (Digital Currency Daily)"])
+          );
+
+          setBnbValues(bnbData?.data["Time Series (Digital Currency Daily)"]);
+          setCakeValues(cakeData?.data["Time Series (Digital Currency Daily)"]);
+        })
+      );
+    };
+    fetchCoins();
+  }, []);
+
   //Functions
 
-  const getLastCoinValue = (data) => {
-    setLastCoinValue(data);
-  };
+  function getExchange(dateIndex) {
+    return changeExchange
+      ? (
+          Number(bnbValues?.[chart[dateIndex]]?.["1a. open (USD)"]) /
+          Number(cakeValues?.[chart[dateIndex]]?.["1a. open (USD)"])
+        ).toFixed(2)
+      : (
+          Number(cakeValues?.[chart[dateIndex]]?.["1a. open (USD)"]) /
+          Number(bnbValues?.[chart[dateIndex]]?.["1a. open (USD)"])
+        ).toFixed(4);
+  }
 
   const handleChartStyle = () => {
     chartStyle === "line" ? setChartStyle("bar") : setChartStyle("line");
@@ -42,7 +83,6 @@ const Graph = (props) => {
   const handleClick = (event) => {
     setButtonInfo(event.target.innerHTML);
   };
-  // useEffect(() => handleSetCoinValue, []);
 
   function handleSetCoinValue(data) {
     setCoinValue(data);
@@ -54,7 +94,6 @@ const Graph = (props) => {
 
   function handleSwitchCoin() {
     setChangeExchange(!changeExchange);
-    console.log(lastCoinValue);
   }
 
   return (
@@ -171,7 +210,8 @@ const Graph = (props) => {
                 turq={turq}
                 pinkish={pinkish}
                 changeExchange={changeExchange}
-                getLastCoinValue={getLastCoinValue}
+                chart={chart}
+                getExchange={getExchange}
               ></ChartComponent>
             </div>
           </div>
@@ -183,7 +223,7 @@ const Graph = (props) => {
           chartColor={chartColor}
           changeExchange={changeExchange}
           coinValue={coinValue}
-          lastCoinValue={lastCoinValue}
+          getExchange={getExchange}
         ></Calculator>
       </div>
     </div>
