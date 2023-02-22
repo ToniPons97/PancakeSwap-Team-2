@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./NftDetails.scss";
 
-const apiPath = "http://localhost:5000/api/nft";
+const apiPath = "http://localhost:5050/api/nft";
 function NftDetails() {
   const { id } = useParams();
   const [data, setData] = useState([]);
