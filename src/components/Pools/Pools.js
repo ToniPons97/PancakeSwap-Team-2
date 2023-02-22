@@ -1,5 +1,5 @@
 import "./Pools.scss";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { PoolsFooter } from "./PoolsFooter";
 import { PoolsHeader } from "./PoolsHeader";
 import { PoolsTable } from "./PoolsTable";
