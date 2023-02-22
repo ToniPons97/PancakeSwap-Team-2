@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import bnbLogo from "../assets/icons/binance-coin-bnb-icon.svg";
 import "./nft.scss";
-const apiPath = "http://localhost:5000/api";
+const apiPath = "http://localhost:5000/api/nft";
 
 const bannerDir = "../assets/images/nft-collection-images/";
 const avatarDir = bannerDir + "Avatars/";
