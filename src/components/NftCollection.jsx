@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import bnbLogo from "../assets/icons/binance-coin-bnb-icon.svg";
 import "./nft.scss";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -38,6 +39,9 @@ function NftCollection() {
   };
   return (
     <div className="body">
+      <Helmet>
+        <title>Collections | PancakeSwap</title>
+      </Helmet>
       <div className="top-margin" style={{ marginTop: "150px" }}></div>
       <div className="title">
         <h1>Collections</h1>
