@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
 import { MongoClient } from 'mongodb';
 
+import dotenv from 'dotenv';
 dotenv.config();
 
 const { ATLAS_URI, DBNAME } = process.env;
