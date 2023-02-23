@@ -8,7 +8,6 @@ import teamGoBack from '../assets/icons/teams-go-back.svg';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-
 const TeamProfile = () => {
     const endpoint = 'http://localhost:5050/api/team';
     const { id } = useParams();
@@ -20,7 +19,6 @@ const TeamProfile = () => {
         const jsonRes = await res.json();
         setTeam(jsonRes);
     }
-
 
     useEffect(() => {
         window.scrollTo(0, 0);
