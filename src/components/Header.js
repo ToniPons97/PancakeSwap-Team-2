@@ -49,9 +49,7 @@ const Header = () => {
 								openWlt={openConnectWlt}
 								onCloseWallet={() => setOpenConnectWlt(false)}
 							/>
-              <GoToSwapButton classes="header-middle-button buttonSecondMiddle" btnText='Trade now' />
-								<b>Trade Now</b>
-							</button>
+              				<GoToSwapButton classes="header-middle-button buttonSecondMiddle" btnText='Trade now' />
 						</div>
 					</div>
 					<div className="ibrahim-middle-right">
@@ -85,7 +83,6 @@ const Header = () => {
 						alt="Curved border."
 					/>
 				</div>
-			</div>
 			<div className="ibrahim-foot">
 				<div className="alignmentVerHor">
 					<img id="ps-logo-icon" src={psLogo} alt="" />
@@ -157,6 +154,7 @@ const Header = () => {
 				></path>
 			</svg>
 		</div>
+	</div>
 	);
 };
 
