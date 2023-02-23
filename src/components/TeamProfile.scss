@@ -1,0 +1,179 @@
+.team-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.team-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    a {
+        color: #1fc7d4;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 3px;
+
+    }
+}
+
+.team-profile-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #E7E3EB;
+    width: 1125px;
+    height: 570px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    
+    .profile-top {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.9rem;
+        width: 100%;
+
+        /*
+        div {
+            h3, p {
+                color: #191326;
+            }
+        }
+        */
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 2;
+            position: relative;
+            bottom: 20px;
+        }
+        
+        .team-bg-img {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+        
+
+        img:not(.team-bg-img) {
+            width: 128px;
+            border-radius: 50%;
+            border: 2px solid white;
+            position: relative;
+            bottom: 33px;
+            z-index: 3;
+        }
+    }
+
+    .profile-middle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        height: 240px;
+        padding-top: 40px;
+        background-color: #fff;
+        width: 100%;
+        
+        div:not(.team-stats) {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1.2rem;
+            border: 2px solid #EFF4F5;
+            border-radius: 15px;
+            width: 47%;
+            height: 90%;
+            padding: 20px;
+            
+            #disabled-stat {                
+                h4, p {
+                    color: #BDC2C4;
+                }
+            }
+            
+            
+            .team-stats {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 0.2rem;
+                
+
+                h4 {
+                    color: #280D5F;
+                    font-size: 40px;
+                }
+                
+                p {
+                    font-size: 10.5px;
+                    font-weight: bold;
+                    margin-left: 5px;
+                    color: #7A6EAA;
+                }
+
+            }
+            
+
+            img {
+                width: 44px;
+            }
+        }
+    }
+
+    .profile-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 340px;
+        padding: 0 30px;
+        background-color: #fff;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+
+        box-shadow: 0px 3px 0 1px #E7E3EB;
+
+
+        h4 {
+            align-self: flex-start;
+            justify-self: flex-start;
+            margin-bottom: 20px;
+            color: #280D5F;
+            font-size: 20px;
+        }
+
+        .team-achievements {
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0.2rem;
+                margin-top: 20px;
+
+                p {
+                    color: #BDC2C4;
+                }
+
+            }
+        }
+    }
+}

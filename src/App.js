@@ -16,6 +16,7 @@ import Graph from "./components/Graph";
 import { useCountdown } from "./components/Hooks/useCountdown";
 import NftCollection from "./components/NftCollection";
 import NftDetails from "./components/NftDetails";
+import Teams from "./components/Teams";
 import { HelmetProvider } from "react-helmet-async";
 
 function App() {
@@ -42,10 +43,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="home" element={<Homepage />} />
-            <Route
-              path="/pools"
-              element={<Pools isWarningVisible={showWarning} />}
-            />
             <Route path="*" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
             <Route path="swap" element={<Graph showWarning={showWarning} />} />
@@ -65,6 +62,9 @@ function App() {
               path="add"
               element={<AddLiquidity isWarningVisible={showWarning} />}
             />
+            <Route path='teams' element={<Teams />}>
+              <Route path=':id' element={<Teams />} />
+            </Route>
           </Routes>
           <Footer />
           <Fab isFabVisible={fabVisible} />
