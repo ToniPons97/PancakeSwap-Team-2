@@ -7,7 +7,6 @@ import { useFabScroll } from "./components/Hooks/useFabScroll";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
 import PhishingWarning from "./components/PhishingWarning";
-import { Pools } from "./components/Pools/Pools";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { LiquidityHome } from "./components/LiqudityHome";
