@@ -15,7 +15,7 @@
 	width: 100%;
 	height: 92vh;
 	background: linear-gradient(139.73deg, #e5fdff, #f3efff);
-	
+
 	.innerpage-center {
 		display: flex;
 		height: 120px;
@@ -112,7 +112,6 @@
 								opacity: 1;
 								top: 50%;
 								border-radius: 19px;
-								z-index: 5;
 								font-size: 16px;
 							}
 
@@ -169,6 +168,8 @@
 				border: none;
 				border-radius: 16px;
 				cursor: pointer;
+
+
 
 				button {
 					background: inherit;
@@ -306,7 +307,7 @@
 						opacity: 0;
 						position: absolute;
 					}
-					
+
 					.tooltip2 {
 						background-color: rgb(32, 30, 30);
 						color: #fffdff;

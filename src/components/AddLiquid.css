@@ -3,9 +3,10 @@
   position: relative;
   width: 100%;
   height: 60px;
-  background: rgba(255, 255, 255, 0.7019607843);
+  background-color: #EDF5FF;
   align-items: flex-end;
   justify-content: center;
+  margin-top: 0;
 }
 
 .liquidity-main-area2 {
@@ -41,7 +42,7 @@
 .liquidity-main-area2 .cardContainer2 {
   display: flex;
   justify-content: center;
-  margin-top: 33px;
+  transition: margin-top ease-in 0.2s;
 }
 .liquidity-main-area2 .cardContainer2 #liquid-card2 {
   display: grid;
@@ -62,6 +63,7 @@
   border-bottom: 1px solid #eee;
   height: 110px;
   padding: 24px;
+  position: relative;
 }
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .arrDiv {
   display: flex;
@@ -98,17 +100,15 @@
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qnh2 .qtoolTip {
   visibility: hidden;
   position: absolute;
+  width: 36ch;
   background-color: rgb(32, 30, 30);
   color: #fffdff;
-  width: auto;
-  height: 100px;
   padding: 1rem 1rem;
-  left: 50%;
+  left: 49%;
   transform: translate translate translate(-50%);
   opacity: 1;
-  top: 19.2%;
+  top: 50%;
   border-radius: 19px;
-  z-index: 5;
   font-size: 16px;
 }
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qnh2 .qtoolTip::before {
@@ -121,6 +121,10 @@
 }
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qhover:hover > .qtoolTip {
   visibility: visible;
+  animation: fadeIn ease-in 0.3s;
+}
+.liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .qhover:hover svg {
+  opacity: 0.3;
 }
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-top2 .top-center2 .topItems .twoIcons {
   display: flex;
@@ -253,6 +257,7 @@
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp {
   display: flex;
   justify-content: space-between;
+  position: relative;
   padding: 24px;
   font-size: 16px;
 }
@@ -269,18 +274,19 @@
 }
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp .tooltip2 {
   visibility: hidden;
+  opacity: 0;
+  position: absolute;
 }
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp .tooltip2 {
-  position: absolute;
   background-color: rgb(32, 30, 30);
   color: #fffdff;
   width: auto;
   height: 70px;
-  padding: 1rem;
-  left: 39%;
+  padding: 0.8rem 1rem;
+  left: 20%;
+  top: 62%;
   transform: translate(-50%);
   opacity: 1;
-  bottom: 41.5%;
   border-radius: 16px;
 }
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .wrapLp .tooltip2::before {
@@ -298,4 +304,14 @@
 }
 .liquidity-main-area2 .cardContainer2 #liquid-card2 .card-center .hover:hover > p.tooltip2 {
   visibility: visible;
+  animation: fadeIn ease-in 0.3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=AddLiquid.css.map */

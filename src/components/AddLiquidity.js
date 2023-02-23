@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddLiquid.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -13,22 +13,34 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
 import LiquidityBottom from './LiquidityBottom';
+import ConnectWallet from './ConnectWallet.js';
 
 library.add(faCircleQuestion);
 
 export function AddLiquidity({ isWarningVisible }) {
-	const navgate = useNavigate()
-	
+	const navgate = useNavigate();
+
 	function returnToHomepage() {
-		navgate('/Liquidity')
+		navgate('/Liquidity');
 	}
+
+	//! CONNECT WALEET FUNCTIONS
+	const [openConnectWlt, setOpenConnectWlt] = useState(false);
 
 	return (
 		<div>
 			<div className="seondPage-hide">
 				<header className="trade-nav2"></header>
+
 				<div className="liquidity-main-area2">
-					<div style={isWarningVisible ? {marginTop: '77px'} : {marginTop: '33px'}} className="cardContainer2">
+					<div
+						style={
+							isWarningVisible
+								? { marginTop: '77px' }
+								: { marginTop: '33px' }
+						}
+						className="cardContainer2"
+					>
 						<div id="liquid-card2">
 							<div className="card-top2">
 								<div className="arrDiv">
@@ -38,6 +50,7 @@ export function AddLiquidity({ isWarningVisible }) {
 										icon={faArrowLeft}
 									></FontAwesomeIcon>
 								</div>
+
 								<div className="top-center2">
 									<div className="topItems">
 										<div className="qnh2">
@@ -81,7 +94,7 @@ export function AddLiquidity({ isWarningVisible }) {
 									<div className="lbtndiv">
 										<button className="lbtn">
 											<div className="itemnBNB">
-											{/* {bnb} sould be imported insted of faBowlingBall */}
+												{/* {bnb} sould be imported insted of faBowlingBall */}
 												<img src={faBowlingBall} alt="" />
 												<span className="bnb">BNB</span>
 											</div>
@@ -125,7 +138,9 @@ export function AddLiquidity({ isWarningVisible }) {
 									</div>
 								</div>
 							</div>
-							<div className="btnConnet">
+							{/* {CONNECT WALLET COMPONENT HERE} */}
+							<ConnectWallet openWlt={openConnectWlt} onCloseWallet={() => setOpenConnectWlt(false)}/>
+							<div className="btnConnet"  onClick={() => setOpenConnectWlt(true)}>
 								<button className="connectWlt">
 									<h2>Connect Wallet</h2>
 								</button>
