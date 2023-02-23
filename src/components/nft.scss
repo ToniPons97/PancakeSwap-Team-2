@@ -4,6 +4,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: rgb(241, 237, 243);
+
+  a:visited {
+    color: blue;
+  }
+
 }
 
 .title {
@@ -63,6 +68,8 @@
     font-weight: bold;
   }
 }
+
+
 
 // @media only screen and (max-width: 1500px) {
 //   .main {
