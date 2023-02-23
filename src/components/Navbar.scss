@@ -1,88 +1,87 @@
 @use "../variables.scss" as f;
 @use '../animations.scss';
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Kanit, sans-serif;
-    text-decoration: none;
-    list-style: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Kanit', sans-serif;
+	text-decoration: none;
+	list-style: none;
 }
 
 :root {
-    --navbar-bg-color: #{f.$bgcolor};
-    --navbar-bg-color-dark: #{f.$bgcolor-dark};
-    --sublang-top-txt-color: #{f.$sublang-text-color};
-    --sublang-top-txt-color-alt: #{f.$sublang-text-color-alt};
-    --sublang-text-hover: #{f.$sublang-text-hover};
-    --sublang-text-hover-alt: #{f.$sublang-text-hover-alt};
-    --world-img: #{f.$world-img};
-    --world-img-alt: #{f.$world-img-alt};
-    --select-net-bg-color: #{f.$select-net-bg-color};
-    --select-net-bg-color-alt: #{f.$select-net-bg-color-alt};
-    --select-net-txt-color: #{f.$select-net-txt-color};
-    --select-net-txt-color-hover: #{f.$select-net-txt-color-hover};
-    --select-net-txt-color-hover-alt: #{f.$select-net-txt-color-hover-alt};
-    --select-net-txt-color-alt: #{f.$select-net-txt-color-alt};
-    --net-selection-bg-color: #{f.$net-selection-bg-color};
-    --net-selection-bg-color-alt: #{f.$net-selection-bg-color-alt};
-    --nav-item-hover: #{f.$nav-item-hover};
-    --nav-item-hover-alt: #{f.$nav-item-hover-alt};
-    --net-li-hover: 
-
+	--navbar-bg-color: #{f.$bgcolor};
+	--navbar-bg-color-dark: #{f.$bgcolor-dark};
+	--sublang-top-txt-color: #{f.$sublang-text-color};
+	--sublang-top-txt-color-alt: #{f.$sublang-text-color-alt};
+	--sublang-text-hover: #{f.$sublang-text-hover};
+	--sublang-text-hover-alt: #{f.$sublang-text-hover-alt};
+	--world-img: #{f.$world-img};
+	--world-img-alt: #{f.$world-img-alt};
+	--select-net-bg-color: #{f.$select-net-bg-color};
+	--select-net-bg-color-alt: #{f.$select-net-bg-color-alt};
+	--select-net-txt-color: #{f.$select-net-txt-color};
+	--select-net-txt-color-hover: #{f.$select-net-txt-color-hover};
+	--select-net-txt-color-hover-alt: #{f.$select-net-txt-color-hover-alt};
+	--select-net-txt-color-alt: #{f.$select-net-txt-color-alt};
+	--net-selection-bg-color: #{f.$net-selection-bg-color};
+	--net-selection-bg-color-alt: #{f.$net-selection-bg-color-alt};
+	--nav-item-hover: #{f.$nav-item-hover};
+	--nav-item-hover-alt: #{f.$nav-item-hover-alt};
+	--net-li-hover: ;
 }
 
+.trading li:last-child,
+.submenu5:nth-child(3) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 
-.trading li:last-child, .submenu5:nth-child(3) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    a {
-        flex: 1;
-    }
+	a {
+		flex: 1;
+	}
 }
-
 
 #nav-submenu-msg {
-    width: 84px;
-    height: 25px;
-    border: 2px solid #31D0AA;
-    border-radius: 20px;
-    align-self: flex-end;
-    font-size: 12px;
-    font-weight: 400;
-    color: #31D0AA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+	width: 84px;
+	height: 25px;
+	border: 2px solid #31d0aa;
+	border-radius: 20px;
+	align-self: flex-end;
+	font-size: 12px;
+	font-weight: 400;
+	color: #31d0aa;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .nav-green-circle {
-    margin-left: 6px;
-    margin-right: 5px;
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #31D0AA;
-    border-radius: 10px;
-    z-index: 10;
+	margin-left: 6px;
+	margin-right: 5px;
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background-color: #31d0aa;
+	border-radius: 10px;
+	z-index: 10;
 
-    &:nth-child(2) {
-        margin-bottom: 5px;
-    }
+	&:nth-child(2) {
+		margin-bottom: 5px;
+	}
 }
 
 .hide-navbar {
-    top: -65px !important;
+	top: -65px !important;
 }
 
 .show-navbar {
-    top: 70px;
+	top: 70px;
 }
 
 .navbar {
+
     position: fixed;
     z-index: 5;
     display: flex;
@@ -614,6 +613,3 @@
         }
     }
 }
-
-
-

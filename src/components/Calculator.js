@@ -11,6 +11,7 @@ import {
 import bnbLogo from "../assets/icons/binance-coin-bnb-icon.svg";
 import cakeLogo from "../assets/icons/pancakeswap-cake-logo.svg";
 import HoverInfoCard from "./HoverInfoCard";
+import ConnectWallet from "./ConnectWallet";
 
 function Calculator({
   handleSwitchCoin,
@@ -22,6 +23,8 @@ function Calculator({
   lastCoinValue,
   getExchange,
 }) {
+  // connect Wallet component state
+  const [openConnectWlt, setOpenConnectWlt] = useState(false);
   const [isHover, setIsHover] = useState(false);
   const [coinInputValue, setCoinInputValue] = useState(0);
 
@@ -135,8 +138,9 @@ function Calculator({
           </p>
         </div>
         <div className="connect">
-          <button className="connect-wallet">Connect Wallet</button>
+          <button className="connect-wallet" onClick={() => setOpenConnectWlt(true)}>Connect Wallet</button>
         </div>
+        <ConnectWallet openWlt={openConnectWlt} onCloseWallet={() => setOpenConnectWlt(false)}/>
         {isHover ? <HoverInfoCard></HoverInfoCard> : null}
       </div>
     </div>

@@ -10,12 +10,11 @@ import { Helmet } from 'react-helmet-async';
 
 export function LiquidityHome({ isWarningVisible }) {
 	const navGate = useNavigate();
-	
+
 	// go to second page (add liquidity)
 	const addLiquidity = () => {
 		navGate('/add');
 	};
-
 
 	return (
 		<div className="liquidhome">
@@ -25,7 +24,7 @@ export function LiquidityHome({ isWarningVisible }) {
 			<div>
 				{/* <!--this 'add-liquidity' is for changing the page by clicki the Add Liquidity--> */}
 				<div className="add-liquidityClick">
-					<SubNavbar isWarningVisible={isWarningVisible}/>
+					<SubNavbar isWarningVisible={isWarningVisible} />
 					<div className="liquidity-main-area">
 						<div className="cardContainer">
 							<div id="liquid-card">

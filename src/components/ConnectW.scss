@@ -1,0 +1,164 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Kanit', sans-serif;
+}
+
+.overlay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #280d5f99;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	position: fixed;
+	z-index: 500;
+	// width: 100%;
+	// height: 100%;
+	// position: absolute;
+	// left: -0.001%;
+	// top: -0.001%;
+
+	//!WALLET CONTAINER
+	.walletContainer {
+		background: rgb(241, 247, 247);
+		display: flex;
+		flex-direction: row;
+		width: 792px;
+		height: 490px;
+		z-index: 1000;
+		gap: 15px;
+		border-radius: 14px;
+
+		//left wallet area
+		.leftWallet {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			order: 1;
+			width: 408px;
+			//height: 480px;
+			padding-top: 32px;
+			padding-bottom: 32px;
+			background: #fff;
+			border-radius: 24px;
+			//position: static;
+			justify-content: center;
+			align-items: center;
+			z-index: 100;
+			// margin-right: -3%;
+
+			h4 {
+				margin-right: 36%;
+				font-weight: 600;
+				font-size: 24px;
+				line-height: 1.1;
+				margin-top: 0px;
+			}
+
+			.leftTopText {
+				gap: 6px;
+				width: 312px;
+				height: 100px;
+				padding: 18px 0px 25px;
+				font-size: 14px;
+				color: #7a6eaa;
+			}
+
+			.leftDown {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				width: 408px;
+				height: 188px;
+				flex-direction: column;
+				row-gap: 24px;
+				column-gap: 16px;
+				padding-left: 48px;
+				padding-right: 48px;
+				padding-bottom: 12px;
+				overflow: hidden;
+				overflow-y: auto;
+				margin-left: 10px;
+				justify-content: center;
+				align-items: center;
+
+				.leftDownItems {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 93.34px;
+					height: 76px;
+
+					img {
+						width: 50px;
+						height: 50px;
+					}
+
+					.imageTex {
+						color: #280d5f;
+						font-size: 12px;
+					}
+				}
+			}
+			// Scroll bar adjustment
+			// .item::-webkit-scrollbar
+			// .item::-webkit-scrollbar-coner
+			// .item::-webkit-scrollbarthomb
+			.leftDown::-webkit-scrollbar {
+				background: rgb(213, 210, 210);
+				width: 0px;
+				height: 4px;
+
+			}
+			.leftDown:hover::-webkit-scrollbar {
+				width: 4px;
+				border-radius: 3px;
+
+			}
+			.leftDown:hover::-webkit-scrollbar-thumb {
+				background: gray;
+				border-radius: 4px;
+			}
+		}
+
+		//right wallet area
+		.rightWallet {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			order: 2;
+			gap: 20px;
+			background: rgb(241, 247, 247);
+			width: 340px;
+			//height: 480px;
+			border-radius: 0px 15px 15px 0px;
+
+			h1 {
+				font-size: 20px;
+				color: #7645d9;
+			}
+
+			img {
+				width: 198px;
+				height: 178px;
+			}
+			a {
+				color: #fff;
+				width: 242.14px;
+				height: 48px;
+				padding: 13px;
+				background: #7a6eaa;
+				font-size: 16px;
+				border-radius: 18px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+/*# sourceMappingURL=ConnectW.module.css.map */
