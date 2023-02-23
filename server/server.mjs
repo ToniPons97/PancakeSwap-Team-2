@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import { getAllNfts } from './controllers/NtfsController.mjs';
-import { getAllTeams } from './controllers/TeamsController.mjs';
+import { getAllTeams, getOneById } from './controllers/TeamsController.mjs';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -19,6 +19,9 @@ app.get('/api/nft', getAllNfts);
 
 // Get all Teams
 app.get('/api/team', getAllTeams);
+
+// Get team by id
+app.get('/api/team/:id', getOneById);
 
 app.listen(DB_PORT, () => {
     console.log(`Server listening on port: ${DB_PORT}`);

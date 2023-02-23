@@ -12,7 +12,16 @@ const getAllTeams = async (req, res) => {
     res.json(result).status(200);
 };
 
+// Get team by id
+const getOneById = async (req, res) => {
+    const { id } = req.params;
+
+    let result = await collection.findOne({ id: Number(id) });
+    res.json(result).status(200);
+}
+
 
 export {
-    getAllTeams
+    getAllTeams,
+    getOneById
 }
