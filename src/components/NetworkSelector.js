@@ -57,7 +57,7 @@ const NetworkSelector = () => {
                     <li onClick={handleNetSelection}>
                         <img src={bnb} alt="" />
                         <a href="#" className="navbar-network-selected">
-                        BNB Smart Chain
+                        <span>BNB Smart Chain</span>
                         </a>
                     </li>
                     <li onClick={handleNetSelection}>

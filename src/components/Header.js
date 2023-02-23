@@ -12,6 +12,9 @@ import HeaderSwipper from './HeaderSwipper';
 import ConnectWallet from './ConnectWallet';
 import React, { useState } from 'react';
 
+import GoToSwapButton from './GoToSwapButton';
+
+
 const Header = () => {
 	const [openConnectWlt, setOpenConnectWlt] = useState(false);
 
@@ -46,10 +49,7 @@ const Header = () => {
 								openWlt={openConnectWlt}
 								onCloseWallet={() => setOpenConnectWlt(false)}
 							/>
-							<button
-								className="header-middle-button"
-								id="buttonSecondMiddle"
-							>
+              <GoToSwapButton classes="header-middle-button buttonSecondMiddle" btnText='Trade now' />
 								<b>Trade Now</b>
 							</button>
 						</div>

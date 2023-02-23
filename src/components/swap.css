@@ -5,8 +5,8 @@
   justify-content: space-between;
   padding-left: 13%;
   padding-right: 13%;
-  padding-top: 300px;
-  padding-bottom: 200px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .graph {
@@ -48,7 +48,7 @@
 
 .calculator {
   width: 300px;
-  height: 500px;
+  height: 520px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,6 +156,7 @@ hr {
 .connect {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .middle-right {
@@ -214,6 +215,14 @@ hr {
   border-radius: 10px;
   border: none;
   background-color: rgb(104, 215, 224);
+  box-shadow: rgba(14, 14, 44, 0.4) 0px -1px inset;
+  margin-bottom: 50px;
+}
+
+.connect-wallet:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .trade-nav .tradeNav-item a {
@@ -226,6 +235,8 @@ hr {
   height: 100%;
 }
 
+@import url('../animations.scss');
+
 .hover-info {
   position: absolute;
   width: 300px;
@@ -234,6 +245,7 @@ hr {
   transform: translate(105px, 290px);
   padding: 10px;
   border-radius: 10px;
+  animation: fadeIn ease-in 0.3s;
 }
 
 .up-arrow {

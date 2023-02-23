@@ -1,12 +1,14 @@
+@use "../animations.scss";
+
 .trade-nav2 {
-	display: flex;
-	position: relative;
-	width: 100%;
-	height: 60px;
-	background-color: #EDF5FF;
-	align-items: flex-end;
-	justify-content: center;
-	margin-top: 0;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: #edf5ff;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 0;
 }
 
 .liquidity-main-area2 {

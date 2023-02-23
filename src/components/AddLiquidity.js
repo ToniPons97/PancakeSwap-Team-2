@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from 'react-router-dom';
 import LiquidityBottom from './LiquidityBottom';
 import ConnectWallet from './ConnectWallet.js';
+import { Helmet } from 'react-helmet-async';
 
 library.add(faCircleQuestion);
 
@@ -29,6 +30,9 @@ export function AddLiquidity({ isWarningVisible }) {
 
 	return (
 		<div>
+			<Helmet>
+				<title>Add Liquidity | PancakeSwap</title>
+			</Helmet>
 			<div className="seondPage-hide">
 				<header className="trade-nav2"></header>
 

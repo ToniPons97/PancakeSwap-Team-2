@@ -1,11 +1,12 @@
 import React from 'react';
-import { faGear, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons';
+import { faGear, faClockRotateLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './LiquidHome.scss';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SubNavbar from './SubNavbar';
 import LiquidityBottom from './LiquidityBottom';
+import { Helmet } from 'react-helmet-async';
 
 export function LiquidityHome({ isWarningVisible }) {
 	const navGate = useNavigate();
@@ -17,6 +18,9 @@ export function LiquidityHome({ isWarningVisible }) {
 
 	return (
 		<div className="liquidhome">
+			<Helmet>
+				<title>Liquidity | PancakeSwap</title>
+			</Helmet>
 			<div>
 				{/* <!--this 'add-liquidity' is for changing the page by clicki the Add Liquidity--> */}
 				<div className="add-liquidityClick">
@@ -49,7 +53,7 @@ export function LiquidityHome({ isWarningVisible }) {
 									onClick={addLiquidity}
 									className="add-liquidity"
 								>
-									<i className="fa-solid fa-plus"></i>
+									<FontAwesomeIcon className='liquidity-plus' icon={faPlus} />
 									<h2>Add Liquidity</h2>
 								</button>
 							</div>

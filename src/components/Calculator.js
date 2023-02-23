@@ -19,10 +19,19 @@ function Calculator({
   isGraphOn,
   chartColor,
   changeExchange,
+  coinValue,
+  lastCoinValue,
+  getExchange,
 }) {
   // connect Wallet component state
   const [openConnectWlt, setOpenConnectWlt] = useState(false);
   const [isHover, setIsHover] = useState(false);
+  const [coinInputValue, setCoinInputValue] = useState(0);
+
+  const handleValueChange = (e) => {
+    setCoinInputValue(e.target.value);
+    console.log(coinInputValue);
+  };
 
   const handleHoverCard = () => {
     setIsHover(!isHover);
@@ -79,10 +88,11 @@ function Calculator({
           </button>
           <form action="" method="get" className="first-coin-form">
             <input
+              onChange={handleValueChange}
               id="first-coin-input"
               className="inputs"
               type="number"
-              placeholder="0.0"
+              value={coinInputValue}
             />
           </form>
         </div>
@@ -103,6 +113,7 @@ function Calculator({
           </button>
           <form action="" method="get" className="second-coin-form">
             <input
+              value={(coinInputValue * getExchange(0)).toFixed(2)}
               id="second-coin-input"
               className="inputs"
               type="number"

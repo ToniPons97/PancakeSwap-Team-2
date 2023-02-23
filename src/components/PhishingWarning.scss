@@ -6,8 +6,6 @@
     top: 0;
 }
 
-
-
 #phishing-warning {
     display: flex;
     flex-direction: row;
@@ -18,7 +16,7 @@
     width: 100vw;
     background-image: linear-gradient(#7B4CCE, #4E268D);
     height: 70px;
-    transition: ease-in 0.2s;
+    transition: top ease-in 0.2s;
     
     div {
         display: flex;
@@ -32,6 +30,8 @@
         border-radius: 15px;
         font-size: 0.9rem;
         color: #A09EB1;
+        padding: 10px 0;
+
         
         span {
             font-weight: bolder;
@@ -79,3 +79,46 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 1171px) {
+    #phishing-warning {
+        p {
+            margin-left: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 910px) {
+    #phishing-warning {
+        p {
+            margin-left: 0px;
+        }
+
+        #url {
+            margin-left: 15px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #phishing-warning {
+        #phishing-bunny {
+            display: none;
+        }
+
+        div {
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;
+            padding: 15px 8px;
+
+            button {
+                position: relative;
+                left: 10px;
+            }
+        }
+
+    }
+}
+
