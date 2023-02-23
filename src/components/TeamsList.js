@@ -13,7 +13,7 @@ const TeamsList = ({teamsData}) => {
                             name={t.name}
                             description={t.description}
                             members={t.members}
-                            image={t.image}
+                            image={t.imageName}
                         />
                     )
                 }

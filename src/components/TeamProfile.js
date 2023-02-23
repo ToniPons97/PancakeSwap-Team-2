@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 
 const TeamProfile = ({ teamData }) => {
-    const { name, description, image, members, backgroundImg } = teamData[0];
+    const { name, description, members, imageBg, imageName, lightText } = teamData[0];
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -25,12 +25,12 @@ const TeamProfile = ({ teamData }) => {
             </div>
             <div className='team-profile-main'>
                 <section className='profile-top'>
-                    <img className='team-bg-img' src={backgroundImg} />
-                    <img src={image} alt={`${name} team`} />
+                    <img className='team-bg-img' src={require('../assets/images/teams-images/' + imageBg)} />
+                    <img src={require('../assets/images/teams-images/' + imageName)} alt={`${name} team`} />
 
                     <div>
-                        <h3>{name}</h3>
-                        <p>{description}</p>
+                        <h3 style={lightText ? {color: '#fff'} : {color: '#191326'}}>{name}</h3>
+                        <p style={lightText ? {color: '#fff'} : {color: '#191326'}}>{description}</p>
                     </div>
                 </section>
                 <section className='profile-middle'>

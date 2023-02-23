@@ -6,12 +6,11 @@ import { useNavigate } from 'react-router-dom';
 const Team = ({ index, name, description, members, image }) => {
     const navigate = useNavigate();
 
+
     const handleClick = () => {
         const profile =  `${window.location.pathname}/${index}`;
 
-        //console.log(profile);
         navigate(profile);
-
     }
 
     return (
@@ -33,7 +32,7 @@ const Team = ({ index, name, description, members, image }) => {
             </div>
             <div className='team-extra'>
                 <button onClick={handleClick}>See More</button>
-                <img src={image} alt={`${name} team`}/>
+                <img src={require('../assets/images/teams-images/' + image)} alt={`${name} team`}/>
             </div>
         </div>
     );
