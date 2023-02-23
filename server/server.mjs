@@ -16,7 +16,7 @@ app.use(express.json());
 app.get('/api/nft', getAllNfts);
 
 // Get all Teams
-app.get('/api/teams', getAllTeams);
+app.get('/api/team', getAllTeams);
 
 app.listen(DB_PORT, () => {
     console.log(`Server listening on port: ${DB_PORT}`);
