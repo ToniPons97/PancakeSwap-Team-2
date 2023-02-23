@@ -18,7 +18,7 @@ function NftCollection() {
       const res = await fetch(apiPath);
       const jsonObj = await res.json();
       setData(jsonObj);
-      console.log(jsonObj);
+      //console.log(jsonObj);
     };
     fetchData();
   }, []);
