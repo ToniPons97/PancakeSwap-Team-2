@@ -8,40 +8,24 @@ import { useParams } from 'react-router-dom';
 
 import TeamsList from './TeamsList';
 import TeamProfile from './TeamProfile';
+import { useEffect, useState } from 'react';
 
 
 
 const Teams = () => {
     const { id } = useParams();
-    const teamsData = [
-        {
-            id: 1,
-            name: 'Syrup Storm',
-            description: 'The storm\'s a-comin! Watch out! These bulls are stampeding in a syrupy surge!',
-            members: 190030,
-            imageName: 'syrup-storm-md.png',
-            imageBg: 'syrup-storm-bg.svg',
-            lightText: false
-        },
-        {
-            id: 2,
-            name: 'Fearsome Flippers',
-            description: 'The flippening is coming. Don\'t get in these bunnies\' way, or you\'ll get flipped, too!',
-            members: 170518,
-            imageName: 'fearsome-flippers-md.png',
-            imageBg: 'fearsome-flippers-bg.svg',
-            lightText: true
-        },
-        {
-            id: 3,
-            name: 'Chaotic Cakers',
-            description: 'Can you stand the heat? Stay out of the kitchen or you might get burned to a crisp!',
-            members: 343134,
-            imageName: 'chaotic-cakers-md.png',
-            imageBg: 'chaotic-cakers-bg.svg',
-            lightText: false
-        },
-    ];
+    const [ teamsData, setTeamsData ] = useState([]);
+    const apiUrl = 'http://localhost:5050/api/team';
+
+    const fetchData = async (url) => {
+        const res = await fetch(url);
+        const jsonRes = await res.json();
+        setTeamsData(jsonRes);
+    }
+
+    useEffect(() => {
+        fetchData(apiUrl);
+    }, []);
     
     return (
         <div className='teams-main-container'>
