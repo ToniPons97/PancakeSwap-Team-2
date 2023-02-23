@@ -34,12 +34,7 @@ const Teams = () => {
                 <p>Show off your stats and collectibles with your unique profile. Team features will be revealed soon!</p>
                 <hr />
 
-                {
-                    id ? <TeamProfile 
-                            teamData={teamsData.filter(team => team.id === Number(id))}
-                        /> 
-                        : <TeamsList teamsData={teamsData}/>
-                }
+                { id ? <TeamProfile /> : <TeamsList teamsData={teamsData}/> }
                 
             </div>
         </div>
