@@ -49,7 +49,7 @@ const Header = () => {
 								openWlt={openConnectWlt}
 								onCloseWallet={() => setOpenConnectWlt(false)}
 							/>
-              				<GoToSwapButton classes="header-middle-button buttonSecondMiddle" btnText='Trade now' />
+							<GoToSwapButton classes="header-middle-button buttonSecondMiddle" btnText='Trade now' />
 						</div>
 					</div>
 					<div className="ibrahim-middle-right">
@@ -83,78 +83,85 @@ const Header = () => {
 						alt="Curved border."
 					/>
 				</div>
-			<div className="ibrahim-foot">
-				<div className="alignmentVerHor">
-					<img id="ps-logo-icon" src={psLogo} alt="" />
-				</div>
+				<div className="ibrahim-foot">
+					<div className="alignmentVerHor">
+						<img id="ps-logo-icon" src={psLogo} alt="" />
+					</div>
 
-				<div className="alignmentVerHor millionBillion">
-					Used by millions.
-				</div>
-				<div className="alignmentVerHor millionBillion">
-					Trusted with billions.
-				</div>
-				<div className="footTexts">
-					<h3 className="alignmentVerHor">
-						PancakeSwap has the most users of any decentralized platform,
-						ever.
-					</h3>
-					<h3 className="alignmentVerHor">
-						And those users are now entrusting the platform with over $3.5
-						billion in funds.
-					</h3>
-				</div>
-				<div id="joinText" className="alignmentVerHor">
-					Will you join them?
-				</div>
-				<div className="header-boxes-flex">
-					<div className="square">
-						<div className="icon">
-							<img src={headerUser} alt="" />
-						</div>
-						<div className="boxBottoms">
-							<div className="number">2 million</div>
-							<div id="usersCategory" className="category">
-								users
+					<div className="alignmentVerHor millionBillion">
+						Used by millions.
+					</div>
+					<div className="alignmentVerHor millionBillion">
+						Trusted with billions.
+					</div>
+					<div className="footTexts">
+						<h3 className="alignmentVerHor">
+							PancakeSwap has the most users of any decentralized platform,
+							ever.
+						</h3>
+						<h3 className="alignmentVerHor">
+							And those users are now entrusting the platform with over $3.5
+							billion in funds.
+						</h3>
+					</div>
+					<div id="joinText" className="alignmentVerHor">
+						Will you join them?
+					</div>
+					<div className="header-boxes-flex">
+						<div className="square">
+							<div className="icon">
+								<img src={headerUser} alt="" />
 							</div>
-							<div className="time">in the last 30 days</div>
+							<div className="boxBottoms">
+								<div className="number">2 million</div>
+								<div id="usersCategory" className="category">
+									users
+								</div>
+								<div className="time">in the last 30 days</div>
+							</div>
+						</div>
+						<div className="square">
+							<div className="icon">
+								<img src={headerTrades} alt="" />
+							</div>
+							<div className="boxBottoms">
+								<div className="number">55 million</div>
+								<div id="tradesCategory" className="category">
+									trades
+								</div>
+								<div className="time">made in the last 30 days</div>
+							</div>
+						</div>
+						<div className="square">
+							<div className="icon">
+								<img src={headerStaked} alt="" />
+							</div>
+							<div className="boxBottoms">
+								<div className="number">$3.5 billion</div>
+								<div id="stakedCategory" className="category">
+									staked
+								</div>
+								<div className="time">Total Value Locked</div>
+							</div>
 						</div>
 					</div>
-					<div className="square">
-						<div className="icon">
-							<img src={headerTrades} alt="" />
-						</div>
-						<div className="boxBottoms">
-							<div className="number">55 million</div>
-							<div id="tradesCategory" className="category">
-								trades
-							</div>
-							<div className="time">made in the last 30 days</div>
-						</div>
-					</div>
-					<div className="square">
-						<div className="icon">
-							<img src={headerStaked} alt="" />
-						</div>
-						<div className="boxBottoms">
-							<div className="number">$3.5 billion</div>
-							<div id="stakedCategory" className="category">
-								staked
-							</div>
-							<div className="time">Total Value Locked</div>
-						</div>
-					</div>
 				</div>
-			</div>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				{/* <svg style={{backgroundImage: 'none'}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 				<path
 					fill="#d7caec"
 					fillOpacity="1"
 					d="M0,64L1440,96L1440,0L0,0Z"
 				></path>
-			</svg>
+			</svg> */}
+				<div id='footer-bottom-curve-container'>
+					<svg  viewBox="0 0 1660 48"  xmlns="http://www.w3.org/2000/svg">
+						<path 
+							fillOpacity="1"
+							d="M1660 48C1139.02 46.1887 336.256 15.2453 0 0H1660V48Z"></path>
+					</svg>
+				</div>
+			</div>
 		</div>
-	</div>
 	);
 };
 

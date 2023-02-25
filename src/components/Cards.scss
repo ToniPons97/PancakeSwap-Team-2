@@ -11,12 +11,13 @@
 
 #cards-1 {
     background-color: white;
-    height: 350px;
-
+    height: 557px;
+    
     .cards-text {
+        z-index: 2;
         position: relative;
         right: 65px;
-        bottom: 85px;
+        bottom: 16px;
     }
 }
 
@@ -247,7 +248,7 @@
     position: relative;
     z-index: 1;
     background-color: #faf9fa;
-    ;
+    
 
     svg {
         fill: white;

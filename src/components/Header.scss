@@ -370,3 +370,18 @@
 #stakedCategory {
     color: #ed4b9e;
 }
+
+#footer-bottom-curve-container {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    margin-top: 0;
+    padding: 0;
+
+    svg {
+        fill: #d7caec;
+        width: 100rem;
+        height: 150%;
+        max-height: 48px;
+    }
+}

@@ -19,7 +19,7 @@ function NftDetails() {
     <div className="details-main">
       <div style={{ marginTop: "150px" }}></div>
       {data.map((el) => (
-        <div>
+        <div key={el.id}>
           <div className="details-container">
             <img
               className="details-banner"
