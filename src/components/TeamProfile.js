@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import teamTrophy from '../assets/icons/trophy.svg';
 import teamUser from '../assets/icons/teams-user.svg';
 import teamComingSoon from '../assets/icons/team-coming-soon.svg';
-import teamGoBack from '../assets/icons/teams-go-back.svg';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import GoBackLink from './GoBackLink';
 
 const TeamProfile = () => {
     const endpoint = 'http://localhost:5050/api/team';
@@ -30,12 +30,7 @@ const TeamProfile = () => {
         <>
             {
                 team ? <div className='team-profile'>
-                    <div className='team-nav'>
-                        <img src={teamGoBack} alt='Go back' />
-                        <Link to='/teams'>
-                            Teams Overview
-                        </Link>
-                    </div>
+                    <GoBackLink linkText='Teams Overview' to='/teams' />
                     <div className='team-profile-main'>
                         <section className='profile-top'>
                             <img className='team-bg-img' src={require('../assets/images/teams-images/' + team?.imageBg)} />

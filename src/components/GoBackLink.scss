@@ -1,0 +1,16 @@
+.link-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+
+    a {
+        color: #1fc7d4;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 3px;
+        margin-bottom: 10px;
+
+    }
+}

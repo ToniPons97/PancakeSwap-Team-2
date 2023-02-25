@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import GoBackLink from "./GoBackLink";
 import "./NftDetails.scss";
 
 const apiPath = "http://localhost:5050/api/nft";
@@ -18,6 +19,7 @@ function NftDetails() {
   return (
     <div className="details-main">
       <div style={{ marginTop: "150px" }}></div>
+      <GoBackLink linkText="All Collections" to="/Collections" />
       {data.map((el) => (
         <div key={el.id}>
           <div className="details-container">
