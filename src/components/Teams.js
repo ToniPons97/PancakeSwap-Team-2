@@ -1,10 +1,6 @@
 import './Teams.scss';
-
-// import syrupStormBg from '../assets/images/teams-images/syrup-storm-bg.svg';
-// import fearsomeFlippersBg from '../assets/images/teams-images/fearsome-flippers-bg.svg';
-// import chaoticCakersBg from '../assets/images/teams-images/chaotic-cakers-bg.svg'
-
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import TeamsList from './TeamsList';
 import TeamProfile from './TeamProfile';
@@ -29,6 +25,9 @@ const Teams = () => {
     
     return (
         <div className='teams-main-container'>
+            <Helmet>
+                <title>Leaderboard | PancakeSwap</title>
+            </Helmet>
             <div className='teams-flex'>
                 <h2>Teams & Profiles</h2>
                 <p>Show off your stats and collectibles with your unique profile. Team features will be revealed soon!</p>
