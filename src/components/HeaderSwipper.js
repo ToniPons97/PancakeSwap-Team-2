@@ -7,12 +7,18 @@ import lottery from '../assets/images/header-images/lottery.webp';
 import perpetual from '../assets/images/header-images/perpetual.webp';
 import SwipperCounter from './SwipperCounter';
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HeaderSwipper = () => {
     const [ currentBulletIndex, setCurrentBulletIndex ] = useState(0);
     const bulletsContainerRef = useRef(null);
     const headerContainerRef = useRef(null);
     const intervalIdRef = useRef();
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/swap');
+    }
 
     const customImgStyles = [
         {top: '-36px', right: '0px', }, 
@@ -42,7 +48,7 @@ const HeaderSwipper = () => {
         {
             top: <h1 className="header-head-el">Perpetual Futures</h1>,
             middle: <h1>UP TO 100x LEVERAGE</h1>,
-            bottom: <span>
+            bottom: <span onClick={handleClick}>
                         <b>Trade Now</b>
                         <img src={headerBtnRightArrow} alt="Right arrow." />
                     </span>,
