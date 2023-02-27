@@ -13,7 +13,7 @@ const getAllTeams = async (req, res) => {
 };
 
 // Get team by id
-const getOneById = async (req, res) => {
+const getTeamById = async (req, res) => {
     const { id } = req.params;
 
     let result = await collection.findOne({ id: Number(id) });
@@ -23,5 +23,5 @@ const getOneById = async (req, res) => {
 
 export {
     getAllTeams,
-    getOneById
+    getTeamById
 }

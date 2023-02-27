@@ -12,7 +12,15 @@ const getAllNfts = async (req, res) => {
     res.json(result).status(200);
 };
 
+// Get NFT by id
+const getNftById = async (req, res) => {
+    const { id } = req.params;
+    let result = await collection.findOne({id: Number(id)});
+    res.json(result).status(200);
+}
+
 
 export {
-    getAllNfts
+    getAllNfts,
+    getNftById
 }
