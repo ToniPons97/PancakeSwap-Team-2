@@ -14,7 +14,7 @@ const TeamProfile = () => {
 
     const [team, setTeam] = useState(null);
 
-    const fetchData = async (id) => {
+    const fetchData = async () => {
         const res = await fetch(`${endpoint}/${id}`);
         const jsonRes = await res.json();
         setTeam(jsonRes);
@@ -23,7 +23,7 @@ const TeamProfile = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
         if (!team)
-            fetchData(id);
+            fetchData();
     }, [team]);
 
     return (

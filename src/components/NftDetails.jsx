@@ -16,13 +16,9 @@ function NftDetails() {
   };
 
   useEffect(() => {
-    if (!data) {
+    window.scrollTo(0, 0);
+    if (!data)
       fetchData();
-      console.log(data);
-    } else {
-
-      console.log(data.id);
-    }
   }, [data]);
 
   return (
